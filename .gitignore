@@ -1,0 +1,61 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+submission.zip
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing and Coverage artefacts
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Match Logs and Telemetry
+*.log
+*.stderr
+*.stdout
+
+# Offline Training Checkpoints and Experiment Artifacts
+training/experiments/*
+!training/experiments/.gitkeep
+*.pkl
+*.npy
+*.npz
+*.checkpoint
+
+# OS-specific files
+.DS_Store
+Thumbs.db

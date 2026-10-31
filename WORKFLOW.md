@@ -22,19 +22,28 @@ To prevent merge conflicts and ensure code stability, **direct commits to `main`
 ## 👥 Workload Split & Responsibilities
 
 ### Member 1: Infrastructure, Protocol Engine & Testing Harness
-* **Primary Scope:** `core/` directory, `bot.py` event loop, and `tests/local_runner.py`.
+* **Primary Scope:** `core/` directory (`protocol.py`, `state.py`, `safety.py`), initial `bot.py` event loop integration, and `tests/local_runner.py`.
 * **Deliverables:**
   1. Build `core/protocol.py` to parse JSON from `stdin` and route `action_request` / `discard_request`.
   2. Implement `core/state.py` to track pot, bets, history, stacks, and time bank.
   3. Implement `core/safety.py` to sanitize actions and handle fallbacks.
-  4. Build `tests/local_runner.py` to simulate a complete 400-hand match between two bots over pipes.
+  4. Scaffolding and initial integration of `bot.py` event loop.
+  5. Build `tests/local_runner.py` to simulate a complete 400-hand match between two bots over pipes.
 
 ### Member 2: Strategic Decision Engines & Equity Evaluator
-* **Primary Scope:** `strategy/` directory.
+* **Primary Scope:** `strategy/` directory (`cards.py`, `evaluator.py`, `equity.py`, `discard.py`, `betting.py`, `opponent.py`).
 * **Deliverables:**
-  1. Build `strategy/evaluator.py` for 3-card preflop hand strength and 5-card post-flop evaluation using `numpy`.
-  2. Build `strategy/discard.py` to determine which card to discard on the flop based on remaining hand equity.
-  3. Build `strategy/betting.py` for pot-odds-based betting, raise sizing, and fold thresholds.
+  1. Build `strategy/cards.py` for card ID mapping (0..51) and 32-bit Cactus Kev bitmasks.
+  2. Build `strategy/evaluator.py` for fast O(1) 5-card & 7-card hand strength evaluation.
+  3. Build `strategy/equity.py` for vectorized Monte Carlo equity rollouts with `numpy`.
+  4. Build `strategy/discard.py` to determine flop discard candidate optimization.
+  5. Build `strategy/betting.py` for preflop opening rules, pot-odds calculation, and bet sizing.
+  6. Build `strategy/opponent.py` for independent opponent sampling without card leakage.
+
+### Joint Responsibilities & Collaboration Guidelines
+* **Tests & Integration:** Both members jointly write and review unit tests in `tests/` and participate in end-to-end integration reviews.
+* **Shared File Discipline:** Avoid simultaneous overlapping edits to shared files (e.g., `bot.py`). Member 1 establishes the initial `bot.py` interface; Member 2 hooks in strategy endpoints via small, focused PRs.
+* **Feature Branches & Reviews:** All code lands via dedicated feature branches (e.g. `feature/protocol-io`, `feature/evaluator`). Direct pushes to `main` are strictly forbidden; each PR requires peer review.
 
 ---
 
