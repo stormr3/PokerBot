@@ -33,5 +33,13 @@ VALUE_BET_EQUITY_THRESHOLD: float = 0.65
 BLUFF_CATCH_BUFFER: float = 0.05
 DEFAULT_POT_FRACTION: float = 0.60
 
+# Preflop Canonical Equity & Pot-Odds Thresholds
+PREFLOP_OPEN_EQUITY: float = 0.54       # Button open-raise threshold
+PREFLOP_BB_RAISE_EQUITY: float = 0.58    # Big Blind raise vs limp threshold
+PREFLOP_3BET_EQUITY: float = 0.65        # Re-raise / 3-bet value threshold
+PREFLOP_LIMP_EQUITY: float = 0.40        # Button limp / call 1 chip threshold
+PREFLOP_CALL_BUFFER_IP: float = 0.04     # In-position pot odds realization discount
+PREFLOP_CALL_BUFFER_OOP: float = 0.00    # Out-of-position pot odds buffer
+
 # Logging limits (Official engine limit: 64 KB = 65,536 bytes)
 MAX_STDERR_BYTES: int = 50_000

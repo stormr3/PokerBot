@@ -37,6 +37,11 @@ BOT_MODULES = [
     "opponent_model.py",
 ]
 
+# Additional static data assets to bundle (relative path in src/ -> path in zip)
+BOT_ASSETS = [
+    ("data/preflop_equity.npz", "data/preflop_equity.npz"),
+]
+
 
 def check_file_imports(file_path: Path, local_module_names: set[str]) -> list[str]:
     """Inspects file AST for forbidden external package imports."""
@@ -110,6 +115,11 @@ def build_package(output_zip: str = "submission.zip") -> None:
             mod_path = src_dir / mod_name
             zf.write(mod_path, arcname=mod_name)
             print(f"  + Added {mod_name}")
+        for rel_src, arcname in BOT_ASSETS:
+            asset_path = src_dir / rel_src
+            if asset_path.is_file():
+                zf.write(asset_path, arcname=arcname)
+                print(f"  + Added {arcname}")
 
     # 3. Check zip size
     size_bytes = zip_path.stat().st_size

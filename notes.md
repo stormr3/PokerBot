@@ -32,6 +32,7 @@
 
 ### Person B: Discard Strategy, Betting Engine & Opponent Modeling
 * [x] Scaffold `src/preflop_table.py` (3-card hand tier classification and opening rules).
+* [x] Implement precomputed canonical equity table (.npz) & pot-odds preflop engine.
 * [x] Scaffold `src/opponent_model.py` (statistical profile: VPIP, PFR, discards seen, range sampling).
 * [x] Implement `src/discard.py` (scoring 3 candidate 2-card holdings on flop, keeping best made hand).
 * [x] Implement `src/betting.py` (pot-odds calculation, raise sizing, legal action clamping).
@@ -56,3 +57,7 @@
 | 2026-11-04 (Init) | submission.zip | random_bot | 3x100 | multi | +617 | 0.00s / 60s | 0 | 3 Wins, 0 Losses |
 | 2026-11-04 (Init) | Baseline Skeleton | tight_folder | 2x100 | multi | +152 | 0.00s / 60s | 0 | 2 Wins, 0 Losses |
 | 2026-11-04 (Init) | Baseline Skeleton | always_raise | 2x100 | multi | +426 | 0.00s / 60s | 0 | 2 Wins, 0 Losses |
+| 2026-11-04 (Preflop Table) | submission.zip (2k sims .npz) | always_call | 400 | 492482 | +141 | 0.00s / 60s | 0 | Win |
+| 2026-11-04 (Preflop Table) | submission.zip (2k sims .npz) | always_raise | 2x200 | multi | +679 | 0.00s / 60s | 0 | 2 Wins, 0 Losses |
+| 2026-11-04 (Preflop Table) | submission.zip (2k sims .npz) | random_bot | 2x200 | multi | +492 | 0.00s / 60s | 0 | 2 Wins, 0 Losses |
+| 2026-11-04 (Preflop Table) | submission.zip (2k sims .npz) | tight_folder | 2x200 | multi | +315 | 0.00s / 60s | 0 | 2 Wins, 0 Losses |

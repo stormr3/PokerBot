@@ -54,6 +54,7 @@ training/experiments/*
 *.pkl
 *.npy
 *.npz
+!src/data/*.npz
 *.checkpoint
 
 # OS-specific files

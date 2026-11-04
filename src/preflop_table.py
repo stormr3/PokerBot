@@ -1,98 +1,188 @@
 # ==============================================================================
-# preflop_table.py — Precomputed Preflop Range & Classification Module
+# preflop_table.py — Precomputed Canonical Equity & Pot-Odds Preflop Module
 # Owner: Person B
 #
 # Responsibilities:
-# - Classify 3-card hole card combinations into strength tiers (Tier 1..5).
-# - Pure Python lookup tables and classification helpers (no runtime file reads).
-# - Provide baseline opening and calling recommendations based on seat position.
+# - Map 3-card hole card holdings to canonical isomorphism classes (1,755 keys).
+# - Provide O(1) showdown equity lookup using precomputed .npz table in src/data/.
+# - Provide pot-odds and equity based recommendations for preflop street.
+# - Guarantee fallback heuristics if precomputed table cannot be read.
 # ==============================================================================
 
 from collections import Counter
+from pathlib import Path
 from typing import Sequence
 
+import config
 from evaluator import RANK_VALUE
 
+RANK_STR = "23456789TJQKA"
+RANK_MAP = {r: i for i, r in enumerate(RANK_STR)}
 
-def classify_3cards(cards: Sequence[str]) -> tuple[str, int]:
-    """Classifies 3 hole cards into a descriptive pattern and numeric tier (1=best, 5=worst).
+# Precomputed equity table in-memory cache: canonical_key -> float equity in [0.0, 1.0]
+_EQUITY_CACHE: dict[str, float] = {}
+_TABLE_LOADED: bool = False
 
-    Tiers:
-        Tier 1: Three of a kind, high pairs (AA, KK, QQ, JJ), triple broadway (e.g. AKQ).
-        Tier 2: Medium pocket pairs (TT-77), two high broadway cards (AK, AQ), 3-flush broadway.
-        Tier 3: Low pocket pairs (66-22), connected cards, suited connectors.
-        Tier 4: One high card (A or K) with uncoordinated low cards.
-        Tier 5: Uncoordinated low unsuited cards ("trash").
+
+def canonical_3card(cards: Sequence[str]) -> str:
+    """Maps any 3 cards to an unambiguous canonical 6-character string.
+
+    Sorts ranks descending (2..A).
+    Normalizes suits to canonical s, h, d representation.
     """
     if len(cards) < 3:
-        return ("unknown", 5)
+        return "2s2h2d"
+
+    sorted_cards = sorted(cards, key=lambda c: RANK_MAP.get(c[0], 0), reverse=True)
+    r0, r1, r2 = sorted_cards[0][0], sorted_cards[1][0], sorted_cards[2][0]
+    s0, s1, s2 = sorted_cards[0][1], sorted_cards[1][1], sorted_cards[2][1]
+
+    # Trips (r0 == r1 == r2)
+    if r0 == r1 == r2:
+        return f"{r0}s{r1}h{r2}d"
+
+    # High Pair (r0 == r1 > r2)
+    if r0 == r1:
+        if s2 == s0 or s2 == s1:
+            return f"{r0}s{r1}h{r2}s"
+        return f"{r0}s{r1}h{r2}d"
+
+    # Low Pair (r0 > r1 == r2)
+    if r1 == r2:
+        if s0 == s1 or s0 == s2:
+            return f"{r0}s{r1}s{r2}h"
+        return f"{r0}d{r1}s{r2}h"
+
+    # Distinct ranks (r0 > r1 > r2)
+    distinct_suits = len({s0, s1, s2})
+    if distinct_suits == 1:
+        return f"{r0}s{r1}s{r2}s"
+    if distinct_suits == 3:
+        return f"{r0}s{r1}h{r2}d"
+    if s0 == s1:
+        return f"{r0}s{r1}s{r2}d"
+    if s0 == s2:
+        return f"{r0}s{r1}d{r2}s"
+    return f"{r0}d{r1}s{r2}s"
+
+
+def _load_equity_table() -> None:
+    """Loads precomputed canonical equity table from .npz file into in-memory dict."""
+    global _EQUITY_CACHE, _TABLE_LOADED
+    if _TABLE_LOADED:
+        return
+
+    base_dir = Path(__file__).resolve().parent
+    candidate_paths = [
+        base_dir / "data" / "preflop_equity.npz",
+        base_dir / "preflop_equity.npz",
+        Path.cwd() / "src" / "data" / "preflop_equity.npz",
+        Path.cwd() / "data" / "preflop_equity.npz",
+    ]
+
+    for p in candidate_paths:
+        if p.is_file():
+            try:
+                import numpy as np
+
+                data = np.load(str(p), mmap_mode=None)
+                keys = data["keys"]
+                eqs = data["equities"]
+                _EQUITY_CACHE = {str(k): float(v) for k, v in zip(keys, eqs)}
+                _TABLE_LOADED = True
+                return
+            except Exception:
+                continue
+
+    _TABLE_LOADED = True  # Avoid re-probing if files are missing
+
+
+def _heuristic_equity(cards: Sequence[str]) -> float:
+    """Heuristic equity estimation fallback if precomputed table is not loaded."""
+    if len(cards) < 3:
+        return 0.50
 
     ranks = [c[0] for c in cards]
     suits = [c[1] for c in cards]
-    values = sorted([RANK_VALUE[r] for r in ranks], reverse=True)
+    values = sorted([RANK_VALUE.get(r, 2) for r in ranks], reverse=True)
     counts = Counter(ranks).most_common()
 
-    # Three of a kind (e.g. 8s 8h 8d)
     if counts[0][1] == 3:
-        return ("trips", 1)
-
-    # Pocket pair
+        return 0.78
     if counts[0][1] == 2:
-        pair_val = RANK_VALUE[counts[0][0]]
-        if pair_val >= 11:  # JJ, QQ, KK, AA
-            return ("high_pair", 1)
-        if pair_val >= 7:   # 77 - TT
-            return ("medium_pair", 2)
-        return ("low_pair", 3)
-
-    # All three broadway (T, J, Q, K, A)
-    if values[2] >= 10:
-        return ("triple_broadway", 1)
-
-    # 3-flush
+        pair_val = RANK_VALUE.get(counts[0][0], 2)
+        return 0.50 + (pair_val / 14.0) * 0.28
     if len(set(suits)) == 1:
-        if values[0] >= 12:  # Ace or King high 3-flush
-            return ("high_3flush", 2)
-        return ("suited_3flush", 3)
-
-    # Connected cards (e.g. 7-8-9, J-T-9)
-    if values[0] - values[1] == 1 and values[1] - values[2] == 1:
-        return ("straight_connected", 2 if values[0] >= 10 else 3)
-
-    # Ace or King with one broadway
+        return 0.45 + (values[0] / 14.0) * 0.15
+    if values[2] >= 10:
+        return 0.60
     if values[0] >= 13 and values[1] >= 10:
-        return ("broadway_ace_king", 2)
-
-    # High card Ace or King
-    if values[0] >= 13:
-        return ("ace_or_king_high", 4)
-
-    return ("uncoordinated", 5)
+        return 0.55
+    if values[0] >= 12:
+        return 0.50
+    return 0.35 + (values[0] / 14.0) * 0.10
 
 
-def get_preflop_recommendation(cards: Sequence[str], seat: str, to_call: int) -> str:
-    """Returns a baseline action recommendation ('raise', 'call', 'check', 'fold').
+def get_preflop_equity(cards: Sequence[str]) -> float:
+    """Returns precomputed showdown equity in [0.0, 1.0] for the given 3 hole cards.
+
+    Performs an O(1) hash lookup from the preloaded canonical .npz table.
+    """
+    _load_equity_table()
+    if not cards or len(cards) < 3:
+        return 0.50
+
+    key = canonical_3card(cards)
+    if key in _EQUITY_CACHE:
+        return _EQUITY_CACHE[key]
+    return _heuristic_equity(cards)
+
+
+def classify_3cards(cards: Sequence[str]) -> tuple[str, int]:
+    """Classifies 3 hole cards into pattern and numeric tier (for backward compatibility)."""
+    equity = get_preflop_equity(cards)
+    if equity >= 0.70:
+        return ("monster", 1)
+    if equity >= 0.60:
+        return ("strong", 2)
+    if equity >= 0.50:
+        return ("medium", 3)
+    if equity >= 0.40:
+        return ("weak", 4)
+    return ("trash", 5)
+
+
+def get_preflop_recommendation(cards: Sequence[str], seat: str, to_call: int, pot: int = 3) -> str:
+    """Returns baseline action recommendation using canonical equity and pot odds.
 
     Args:
         cards: Player's 3 hole cards.
-        seat: 'button' (acts 1st preflop) or 'big_blind' (acts 2nd preflop).
+        seat: 'button' or 'big_blind'.
         to_call: Chips needed to call.
+        pot: Total pot size including current bets.
     """
-    pattern, tier = classify_3cards(cards)
+    equity = get_preflop_equity(cards)
 
-    if seat == "button":
-        # Button: open-raise with top tiers, call or fold with weak tiers
-        if tier <= 3:
+    # Free to check
+    if to_call <= 0:
+        if seat == "big_blind" and equity >= config.PREFLOP_BB_RAISE_EQUITY:
             return "raise"
-        if tier == 4 and to_call <= 1:
-            return "call"
-        return "fold" if to_call > 0 else "check"
-
-    # Big blind
-    if to_call == 0:
         return "check"
-    if tier <= 2:
+
+    # Button opening (to_call == 1, pot == 3)
+    if seat == "button" and to_call == 1:
+        if equity >= config.PREFLOP_OPEN_EQUITY:
+            return "raise"
+        if equity >= config.PREFLOP_LIMP_EQUITY:
+            return "call"
+        return "fold"
+
+    # Facing bet or 3-bet
+    pot_odds = to_call / float(pot + to_call)
+    buffer = config.PREFLOP_CALL_BUFFER_IP if seat == "button" else config.PREFLOP_CALL_BUFFER_OOP
+
+    if equity >= config.PREFLOP_3BET_EQUITY:
         return "raise"
-    if tier <= 4:
+    if equity >= (pot_odds - buffer):
         return "call"
     return "fold"
