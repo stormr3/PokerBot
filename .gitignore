@@ -59,3 +59,5 @@ training/experiments/*
 # OS-specific files
 .DS_Store
 Thumbs.db
+powershell.bat
+logs/
