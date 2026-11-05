@@ -1,0 +1,3061 @@
+{
+  "version": "3.1.0",
+  "game": "3-card-discard-holdem",
+  "iterations": 10000,
+  "created_at": "2026-11-05 11:40:33 UTC",
+  "infoset_count": 304,
+  "diagnostics": {
+    "nodes_touched": 2855010,
+    "undertrained_infosets": 24,
+    "infosets_per_street": {
+      "PREFLOP": 30,
+      "FLOP": 194,
+      "TURN": 60,
+      "RIVER": 20
+    }
+  },
+  "strategy": {
+    "PREFLOP:BUTTON:HIGH_OFFSUIT:FACING_BET": {
+      "fold": 0.06664769097414205,
+      "check_call": 0.232988265362311,
+      "bet_raise": 0.7003640436635469
+    },
+    "PREFLOP:BIG_BLIND:HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.37307926062940167,
+      "bet_raise": 0.6269207393705983
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.13706483465643485,
+      "bet_raise": 0.8629351653435652
+    },
+    "FLOP:BUTTON:EQ_MID_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 0.08235689703579764,
+      "check_call": 0.1812749483103698,
+      "bet_raise": 0.7363681546538325
+    },
+    "TURN:BIG_BLIND:EQ_VERY_HIGH_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.31391835951982366,
+      "bet_raise": 0.6860816404801764
+    },
+    "TURN:BUTTON:EQ_MID_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5706600010848389,
+      "bet_raise": 0.429339998915161
+    },
+    "RIVER:BIG_BLIND:EQ_VERY_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.41834075098721,
+      "bet_raise": 0.58165924901279
+    },
+    "RIVER:BUTTON:EQ_MID:FACING_BET": {
+      "fold": 0.1378602207465089,
+      "check_call": 0.6395401208047548,
+      "bet_raise": 0.22259965844873633
+    },
+    "RIVER:BIG_BLIND:EQ_VERY_HIGH:FACING_BET": {
+      "fold": 0.09190913810429256,
+      "check_call": 0.2551824771568983,
+      "bet_raise": 0.6529083847388092
+    },
+    "TURN:BIG_BLIND:EQ_VERY_HIGH_NO_DRAW:FACING_BET": {
+      "fold": 0.09900146219402126,
+      "check_call": 0.2767941098357438,
+      "bet_raise": 0.6242044279702349
+    },
+    "TURN:BUTTON:EQ_MID_NO_DRAW:FACING_BET": {
+      "fold": 0.13116307026112853,
+      "check_call": 0.4101733669488021,
+      "bet_raise": 0.45866356279006937
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 0.06679052259312264,
+      "check_call": 0.5773146064910676,
+      "bet_raise": 0.3558948709158099
+    },
+    "PREFLOP:BIG_BLIND:HIGH_OFFSUIT:FACING_BET": {
+      "fold": 0.10955198342971446,
+      "check_call": 0.14480159557732686,
+      "bet_raise": 0.7456464209929587
+    },
+    "RIVER:BUTTON:EQ_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.7547715517364595,
+      "bet_raise": 0.24522844826354043
+    },
+    "FLOP:BUTTON:EQ_MID_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4277981593147408,
+      "bet_raise": 0.5722018406852591
+    },
+    "PREFLOP:BUTTON:SUITED_ACE:FACING_BET": {
+      "fold": 0.07912405768069013,
+      "check_call": 0.23643646777186672,
+      "bet_raise": 0.6844394745474431
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.3557268879735955,
+      "bet_raise": 0.6442731120264045
+    },
+    "FLOP:BUTTON:EQ_MID_SUITED_ACE:FACING_BET": {
+      "fold": 0.08650540231584804,
+      "check_call": 0.1944280713548161,
+      "bet_raise": 0.7190665263293359
+    },
+    "TURN:BUTTON:EQ_HIGH_STRONG_DRAW:FACING_BET": {
+      "fold": 0.11493035305832555,
+      "check_call": 0.25982374356563986,
+      "bet_raise": 0.6252459033760346
+    },
+    "RIVER:BUTTON:EQ_VERY_LOW:FACING_BET": {
+      "fold": 0.6308279342120215,
+      "check_call": 0.17620561808998328,
+      "bet_raise": 0.19296644769799515
+    },
+    "RIVER:BUTTON:EQ_VERY_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.2996965904542653,
+      "bet_raise": 0.7003034095457348
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 0.10595625588313495,
+      "check_call": 0.46164972404010474,
+      "bet_raise": 0.43239402007676025
+    },
+    "TURN:BUTTON:EQ_HIGH_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.42764876232725924,
+      "bet_raise": 0.5723512376727408
+    },
+    "FLOP:BUTTON:EQ_MID_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.2400098276153954,
+      "bet_raise": 0.7599901723846045
+    },
+    "TURN:BIG_BLIND:EQ_HIGH_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5773277911944805,
+      "bet_raise": 0.4226722088055196
+    },
+    "TURN:BUTTON:EQ_VERY_HIGH_NO_DRAW:FACING_BET": {
+      "fold": 0.028101734470811275,
+      "check_call": 0.14700395092451485,
+      "bet_raise": 0.8248943146046739
+    },
+    "RIVER:BIG_BLIND:EQ_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.7424378761104732,
+      "bet_raise": 0.2575621238895268
+    },
+    "RIVER:BUTTON:EQ_VERY_HIGH:FACING_BET": {
+      "fold": 0.0532200697132047,
+      "check_call": 0.13381431833613255,
+      "bet_raise": 0.8129656119506627
+    },
+    "RIVER:BIG_BLIND:EQ_MID:FACING_BET": {
+      "fold": 0.2206051354658063,
+      "check_call": 0.5833896489385527,
+      "bet_raise": 0.19600521559564096
+    },
+    "TURN:BIG_BLIND:EQ_HIGH_NO_DRAW:FACING_BET": {
+      "fold": 0.11592922470888477,
+      "check_call": 0.6461967600435737,
+      "bet_raise": 0.23787401524754156
+    },
+    "TURN:BUTTON:EQ_VERY_HIGH_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.35190224908322637,
+      "bet_raise": 0.6480977509167736
+    },
+    "RIVER:BUTTON:EQ_VERY_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.06464008975609875,
+      "bet_raise": 0.9353599102439013
+    },
+    "PREFLOP:BUTTON:SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.13497515335549157,
+      "check_call": 0.3759634365842173,
+      "bet_raise": 0.4890614100602911
+    },
+    "PREFLOP:BIG_BLIND:WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.2756016975595558,
+      "bet_raise": 0.7243983024404441
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.19673737417132683,
+      "bet_raise": 0.803262625828673
+    },
+    "FLOP:BUTTON:EQ_HIGH_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.13935843947371593,
+      "check_call": 0.2962033636143736,
+      "bet_raise": 0.5644381969119104
+    },
+    "TURN:BIG_BLIND:EQ_VERY_LOW_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.28552542580427115,
+      "bet_raise": 0.7144745741957288
+    },
+    "TURN:BUTTON:EQ_LOW_NO_DRAW:FACING_BET": {
+      "fold": 0.24669837422029922,
+      "check_call": 0.46801135186201787,
+      "bet_raise": 0.28529027391768286
+    },
+    "RIVER:BIG_BLIND:EQ_VERY_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.3518500298672626,
+      "bet_raise": 0.6481499701327375
+    },
+    "RIVER:BIG_BLIND:EQ_VERY_LOW:FACING_BET": {
+      "fold": 0.7909598523259617,
+      "check_call": 0.09451660701679229,
+      "bet_raise": 0.11452354065724611
+    },
+    "TURN:BIG_BLIND:EQ_VERY_LOW_NO_DRAW:FACING_BET": {
+      "fold": 0.7411133532794227,
+      "check_call": 0.19440410984358678,
+      "bet_raise": 0.06448253687699047
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 0.2493022675678305,
+      "check_call": 0.6595206423769712,
+      "bet_raise": 0.09117709005519824
+    },
+    "TURN:BUTTON:EQ_LOW_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.40487707630341313,
+      "bet_raise": 0.5951229236965868
+    },
+    "PREFLOP:BIG_BLIND:WEAK_OFFSUIT:FACING_BET": {
+      "fold": 0.15453903426633198,
+      "check_call": 0.22843568748692678,
+      "bet_raise": 0.6170252782467412
+    },
+    "FLOP:BUTTON:EQ_HIGH_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4382428165761268,
+      "bet_raise": 0.561757183423873
+    },
+    "PREFLOP:BUTTON:PAIR_MID:FACING_BET": {
+      "fold": 0.07541269069440408,
+      "check_call": 0.2848280162836027,
+      "bet_raise": 0.6397592930219931
+    },
+    "PREFLOP:BIG_BLIND:BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.24183105606463198,
+      "bet_raise": 0.7581689439353679
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.43361411940854516,
+      "bet_raise": 0.5663858805914549
+    },
+    "FLOP:BUTTON:EQ_HIGH_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.34088461808043796,
+      "bet_raise": 0.6591153819195621
+    },
+    "TURN:BIG_BLIND:EQ_VERY_HIGH_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.2701438065798913,
+      "bet_raise": 0.7298561934201088
+    },
+    "RIVER:BUTTON:EQ_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.524436473965383,
+      "bet_raise": 0.47556352603461693
+    },
+    "TURN:BIG_BLIND:EQ_VERY_HIGH_STRONG_DRAW:FACING_BET": {
+      "fold": 0.1119904458031455,
+      "check_call": 0.3613350868965984,
+      "bet_raise": 0.526674467300256
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_BROADWAY_SUITED:FACING_BET": {
+      "fold": 0.10877068520837484,
+      "check_call": 0.3519587523783134,
+      "bet_raise": 0.5392705624133118
+    },
+    "PREFLOP:BIG_BLIND:BROADWAY_SUITED:FACING_BET": {
+      "fold": 0.10458526992457372,
+      "check_call": 0.3820616307219846,
+      "bet_raise": 0.5133530993534418
+    },
+    "RIVER:BUTTON:EQ_HIGH:FACING_BET": {
+      "fold": 0.08662965236199309,
+      "check_call": 0.2849061869100161,
+      "bet_raise": 0.6284641607279908
+    },
+    "FLOP:BUTTON:EQ_HIGH_PAIR_MID:FACING_BET": {
+      "fold": 0.10661014589994494,
+      "check_call": 0.26878498081521174,
+      "bet_raise": 0.6246048732848433
+    },
+    "FLOP:BIG_BLIND:EQ_MID_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.2317538251272835,
+      "bet_raise": 0.7682461748727165
+    },
+    "FLOP:BUTTON:EQ_LOW_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 0.1509576288424605,
+      "check_call": 0.35611236425793696,
+      "bet_raise": 0.49293000689960254
+    },
+    "TURN:BIG_BLIND:EQ_MID_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5008644285916157,
+      "bet_raise": 0.4991355714083842
+    },
+    "TURN:BUTTON:EQ_LOW_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5008025051167577,
+      "bet_raise": 0.49919749488324233
+    },
+    "RIVER:BIG_BLIND:EQ_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.645711448741378,
+      "bet_raise": 0.354288551258622
+    },
+    "RIVER:BIG_BLIND:EQ_HIGH:FACING_BET": {
+      "fold": 0.14666330566532368,
+      "check_call": 0.5477979457765175,
+      "bet_raise": 0.3055387485581588
+    },
+    "TURN:BIG_BLIND:EQ_MID_NO_DRAW:FACING_BET": {
+      "fold": 0.23671118391552953,
+      "check_call": 0.6788195844782824,
+      "bet_raise": 0.08446923160618812
+    },
+    "FLOP:BIG_BLIND:EQ_MID_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 0.10687222469161901,
+      "check_call": 0.6601870452714215,
+      "bet_raise": 0.23294073003695942
+    },
+    "TURN:BUTTON:EQ_LOW_WEAK_DRAW:FACING_BET": {
+      "fold": 0.2772615875849215,
+      "check_call": 0.38320271382953763,
+      "bet_raise": 0.33953569858554095
+    },
+    "FLOP:BUTTON:EQ_LOW_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.3253242102508134,
+      "bet_raise": 0.6746757897491866
+    },
+    "FLOP:BUTTON:EQ_MID_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4305138918064146,
+      "bet_raise": 0.5694861081935855
+    },
+    "TURN:BIG_BLIND:EQ_HIGH_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.524317234706387,
+      "bet_raise": 0.475682765293613
+    },
+    "TURN:BIG_BLIND:EQ_HIGH_WEAK_DRAW:FACING_BET": {
+      "fold": 0.16999416773674733,
+      "check_call": 0.45620987351701237,
+      "bet_raise": 0.37379595874624033
+    },
+    "FLOP:BUTTON:EQ_MID_PAIR_MID:FACING_BET": {
+      "fold": 0.14638614156193772,
+      "check_call": 0.31093344358255637,
+      "bet_raise": 0.5426804148555059
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5134487420266368,
+      "bet_raise": 0.4865512579733632
+    },
+    "TURN:BIG_BLIND:EQ_MID_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.7153651599049463,
+      "bet_raise": 0.28463484009505363
+    },
+    "TURN:BUTTON:EQ_MID_STRONG_DRAW:FACING_BET": {
+      "fold": 0.10055270126199084,
+      "check_call": 0.5725271930406305,
+      "bet_raise": 0.3269201056973787
+    },
+    "TURN:BIG_BLIND:EQ_MID_STRONG_DRAW:FACING_BET": {
+      "fold": 0.1551395463499345,
+      "check_call": 0.6511681741775687,
+      "bet_raise": 0.19369227947249687
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 0.2889648732668906,
+      "check_call": 0.6398213348197983,
+      "bet_raise": 0.07121379191331109
+    },
+    "TURN:BUTTON:EQ_MID_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.6314237242305686,
+      "bet_raise": 0.36857627576943136
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.3259105602305742,
+      "bet_raise": 0.6740894397694257
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.19738868304130447,
+      "bet_raise": 0.8026113169586956
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 0.25663051827720107,
+      "check_call": 0.6752121861797571,
+      "bet_raise": 0.06815729554304191
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 0.03842749747579278,
+      "check_call": 0.1636543368375303,
+      "bet_raise": 0.797918165686677
+    },
+    "FLOP:BIG_BLIND:EQ_MID_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.2911798896414551,
+      "bet_raise": 0.708820110358545
+    },
+    "FLOP:BUTTON:EQ_LOW_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4972300464424146,
+      "bet_raise": 0.5027699535575855
+    },
+    "TURN:BUTTON:EQ_LOW_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4854252732184485,
+      "bet_raise": 0.5145747267815516
+    },
+    "RIVER:BUTTON:EQ_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.6674411759253018,
+      "bet_raise": 0.33255882407469817
+    },
+    "TURN:BUTTON:EQ_LOW_STRONG_DRAW:FACING_BET": {
+      "fold": 0.3022251428884334,
+      "check_call": 0.28235045543826565,
+      "bet_raise": 0.41542440167330097
+    },
+    "FLOP:BIG_BLIND:EQ_MID_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 0.12386587436446786,
+      "check_call": 0.6763335804556058,
+      "bet_raise": 0.19980054517992635
+    },
+    "FLOP:BUTTON:EQ_LOW_SUITED_ACE:FACING_BET": {
+      "fold": 0.17713405354324077,
+      "check_call": 0.4852016038369371,
+      "bet_raise": 0.3376643426198221
+    },
+    "RIVER:BUTTON:EQ_LOW:FACING_BET": {
+      "fold": 0.3203892239406994,
+      "check_call": 0.47543486327606943,
+      "bet_raise": 0.2041759127832311
+    },
+    "PREFLOP:BUTTON:WEAK_OFFSUIT:FACING_BET": {
+      "fold": 0.09961584531151818,
+      "check_call": 0.2686094989298827,
+      "bet_raise": 0.6317746557585991
+    },
+    "FLOP:BIG_BLIND:EQ_MID_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4615705727777357,
+      "bet_raise": 0.5384294272222643
+    },
+    "FLOP:BUTTON:EQ_LOW_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4551487380128592,
+      "bet_raise": 0.5448512619871406
+    },
+    "FLOP:BIG_BLIND:EQ_MID_BROADWAY_SUITED:FACING_BET": {
+      "fold": 0.383584879353768,
+      "check_call": 0.4081105574941884,
+      "bet_raise": 0.20830456315204365
+    },
+    "FLOP:BUTTON:EQ_LOW_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 0.19608135646469388,
+      "check_call": 0.18374146106937422,
+      "bet_raise": 0.6201771824659319
+    },
+    "FLOP:BUTTON:EQ_HIGH_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.2433057497206669,
+      "bet_raise": 0.7566942502793331
+    },
+    "FLOP:BUTTON:EQ_HIGH_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 0.059607154862862964,
+      "check_call": 0.23009859034781927,
+      "bet_raise": 0.7102942547893177
+    },
+    "TURN:BIG_BLIND:EQ_VERY_LOW_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.3377657566383857,
+      "bet_raise": 0.6622342433616143
+    },
+    "TURN:BUTTON:EQ_VERY_LOW_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.2928654489481692,
+      "bet_raise": 0.7071345510518308
+    },
+    "TURN:BIG_BLIND:EQ_VERY_LOW_STRONG_DRAW:FACING_BET": {
+      "fold": 0.6489323580292361,
+      "check_call": 0.20567098384523835,
+      "bet_raise": 0.14539665812552557
+    },
+    "TURN:BUTTON:EQ_VERY_LOW_WEAK_DRAW:FACING_BET": {
+      "fold": 0.26303654409253263,
+      "check_call": 0.21408083869665367,
+      "bet_raise": 0.5228826172108136
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.6786066475798839,
+      "bet_raise": 0.3213933524201162
+    },
+    "RIVER:BIG_BLIND:EQ_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.6077317631786295,
+      "bet_raise": 0.3922682368213705
+    },
+    "RIVER:BIG_BLIND:EQ_LOW:FACING_BET": {
+      "fold": 0.48282688054704787,
+      "check_call": 0.3645768684963075,
+      "bet_raise": 0.15259625095664459
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 0.5948151607461322,
+      "check_call": 0.30406983555993505,
+      "bet_raise": 0.1011150036939328
+    },
+    "PREFLOP:BIG_BLIND:PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.3581366142101975,
+      "bet_raise": 0.6418633857898025
+    },
+    "FLOP:BIG_BLIND:EQ_MID_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.6144079251933795,
+      "bet_raise": 0.38559207480662044
+    },
+    "FLOP:BIG_BLIND:EQ_MID_PAIR_LOW:FACING_BET": {
+      "fold": 0.14367039252131972,
+      "check_call": 0.6209495809039145,
+      "bet_raise": 0.2353800265747658
+    },
+    "PREFLOP:BIG_BLIND:PAIR_LOW:FACING_BET": {
+      "fold": 0.1906935508516168,
+      "check_call": 0.19952875662099956,
+      "bet_raise": 0.6097776925273837
+    },
+    "PREFLOP:BIG_BLIND:PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4793434770421546,
+      "bet_raise": 0.5206565229578454
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.21980894532548326,
+      "bet_raise": 0.7801910546745168
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 0.05399000975934226,
+      "check_call": 0.1992980150373457,
+      "bet_raise": 0.746711975203312
+    },
+    "TURN:BUTTON:EQ_VERY_HIGH_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.43128338596407456,
+      "bet_raise": 0.5687166140359254
+    },
+    "TURN:BUTTON:EQ_VERY_HIGH_WEAK_DRAW:FACING_BET": {
+      "fold": 0.09979894261944573,
+      "check_call": 0.26654330706531704,
+      "bet_raise": 0.6336577503152372
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_PAIR_HIGH:FACING_BET": {
+      "fold": 0.19581965143719776,
+      "check_call": 0.43003060520435876,
+      "bet_raise": 0.37414974335844353
+    },
+    "PREFLOP:BIG_BLIND:PAIR_HIGH:FACING_BET": {
+      "fold": 0.07400418533313509,
+      "check_call": 0.16256081613594944,
+      "bet_raise": 0.7634349985309155
+    },
+    "PREFLOP:BIG_BLIND:SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.37825564146090973,
+      "bet_raise": 0.6217443585390902
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.32997410949144246,
+      "bet_raise": 0.6700258905085575
+    },
+    "TURN:BIG_BLIND:EQ_LOW_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.31829070884375527,
+      "bet_raise": 0.6817092911562448
+    },
+    "TURN:BIG_BLIND:EQ_LOW_NO_DRAW:FACING_BET": {
+      "fold": 0.4917297448451242,
+      "check_call": 0.44243496322748094,
+      "bet_raise": 0.06583529192739483
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_SUITED_ACE:FACING_BET": {
+      "fold": 0.20613885405145602,
+      "check_call": 0.6155243269875199,
+      "bet_raise": 0.17833681896102402
+    },
+    "PREFLOP:BIG_BLIND:SUITED_ACE:FACING_BET": {
+      "fold": 0.09096360752460507,
+      "check_call": 0.1041249368840409,
+      "bet_raise": 0.8049114555913541
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.11380068454864009,
+      "bet_raise": 0.8861993154513599
+    },
+    "TURN:BUTTON:EQ_HIGH_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5086936232820466,
+      "bet_raise": 0.49130637671795346
+    },
+    "TURN:BUTTON:EQ_HIGH_NO_DRAW:FACING_BET": {
+      "fold": 0.06599859352744598,
+      "check_call": 0.1959109786038252,
+      "bet_raise": 0.7380904278687289
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_SUITED_ACE:FACING_BET": {
+      "fold": 0.11459047570136935,
+      "check_call": 0.5073115024138434,
+      "bet_raise": 0.3780980218847873
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.20384023049397598,
+      "bet_raise": 0.7961597695060241
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_SUITED_ACE:FACING_BET": {
+      "fold": 0.128389579264376,
+      "check_call": 0.4436401091505168,
+      "bet_raise": 0.4279703115851071
+    },
+    "PREFLOP:BUTTON:PAIR_LOW:FACING_BET": {
+      "fold": 0.15264912452993445,
+      "check_call": 0.2782953929735966,
+      "bet_raise": 0.569055482496469
+    },
+    "PREFLOP:BIG_BLIND:SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.2361665431220251,
+      "bet_raise": 0.763833456877975
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.22635756643784888,
+      "bet_raise": 0.773642433562151
+    },
+    "FLOP:BUTTON:EQ_MID_PAIR_LOW:FACING_BET": {
+      "fold": 0.2312450711875694,
+      "check_call": 0.3023980772663829,
+      "bet_raise": 0.46635685154604767
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.3367331293497757,
+      "check_call": 0.5108562707183952,
+      "bet_raise": 0.15241059993182904
+    },
+    "PREFLOP:BIG_BLIND:SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.20333941222795857,
+      "check_call": 0.15482452578341055,
+      "bet_raise": 0.6418360619886309
+    },
+    "FLOP:BUTTON:EQ_MID_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.29528417934502615,
+      "bet_raise": 0.7047158206549738
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 0.2927786182393444,
+      "check_call": 0.5858048849232176,
+      "bet_raise": 0.12141649683743796
+    },
+    "TURN:BUTTON:EQ_VERY_LOW_NO_DRAW:FACING_BET": {
+      "fold": 0.6732563852766177,
+      "check_call": 0.15803780126801967,
+      "bet_raise": 0.1687058134553626
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.31583502028621896,
+      "bet_raise": 0.6841649797137811
+    },
+    "TURN:BUTTON:EQ_VERY_LOW_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.26370209030326863,
+      "bet_raise": 0.7362979096967313
+    },
+    "FLOP:BUTTON:EQ_LOW_PAIR_LOW:FACING_BET": {
+      "fold": 0.17609889006081167,
+      "check_call": 0.5488467195850315,
+      "bet_raise": 0.2750543903541568
+    },
+    "FLOP:BUTTON:EQ_LOW_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.16673976347910505,
+      "bet_raise": 0.833260236520895
+    },
+    "FLOP:BUTTON:EQ_MID_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.304705965527302,
+      "bet_raise": 0.695294034472698
+    },
+    "FLOP:BUTTON:EQ_MID_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 0.06942560564658348,
+      "check_call": 0.32143157230619,
+      "bet_raise": 0.6091428220472265
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.18860119368242387,
+      "bet_raise": 0.8113988063175761
+    },
+    "FLOP:BUTTON:EQ_MID_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4532659445429076,
+      "bet_raise": 0.5467340554570925
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_PAIR_HIGH:FACING_BET": {
+      "fold": 0.09763967693572045,
+      "check_call": 0.4410382237844281,
+      "bet_raise": 0.4613220992798515
+    },
+    "FLOP:BUTTON:EQ_MID_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.13290261121858873,
+      "check_call": 0.4494466182820314,
+      "bet_raise": 0.41765077049937993
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4035331633258965,
+      "bet_raise": 0.5964668366741035
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 0.2370280362417571,
+      "check_call": 0.23209383545296536,
+      "bet_raise": 0.5308781283052776
+    },
+    "PREFLOP:BUTTON:BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 0.0549358660842917,
+      "check_call": 0.5344388182337028,
+      "bet_raise": 0.4106253156820056
+    },
+    "FLOP:BUTTON:EQ_HIGH_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 0.18081330459956885,
+      "check_call": 0.11116458776203597,
+      "bet_raise": 0.7080221076383952
+    },
+    "FLOP:BUTTON:EQ_HIGH_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.3855172374075375,
+      "bet_raise": 0.6144827625924626
+    },
+    "TURN:BIG_BLIND:EQ_LOW_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.45887065013814105,
+      "bet_raise": 0.541129349861859
+    },
+    "TURN:BUTTON:EQ_HIGH_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4533550880539845,
+      "bet_raise": 0.5466449119460155
+    },
+    "TURN:BIG_BLIND:EQ_LOW_WEAK_DRAW:FACING_BET": {
+      "fold": 0.4026104803977286,
+      "check_call": 0.47718507248130226,
+      "bet_raise": 0.12020444712096909
+    },
+    "TURN:BUTTON:EQ_HIGH_WEAK_DRAW:FACING_BET": {
+      "fold": 0.06713631810375673,
+      "check_call": 0.22067682302774133,
+      "bet_raise": 0.712186858868502
+    },
+    "PREFLOP:BUTTON:PAIR_HIGH:FACING_BET": {
+      "fold": 0.040157707685388316,
+      "check_call": 0.3131224874209114,
+      "bet_raise": 0.6467198048937002
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.35252843142030615,
+      "bet_raise": 0.6474715685796938
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_PAIR_HIGH:FACING_BET": {
+      "fold": 0.027378756389011227,
+      "check_call": 0.22125731684198335,
+      "bet_raise": 0.7513639267690054
+    },
+    "FLOP:BUTTON:EQ_HIGH_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4934794867676207,
+      "bet_raise": 0.5065205132323792
+    },
+    "FLOP:BUTTON:EQ_HIGH_PAIR_HIGH:FACING_BET": {
+      "fold": 0.061699853053797035,
+      "check_call": 0.22771095280431913,
+      "bet_raise": 0.7105891941418838
+    },
+    "FLOP:BUTTON:EQ_HIGH_PAIR_LOW:FACING_BET": {
+      "fold": 0.12033892301902396,
+      "check_call": 0.43862080534602527,
+      "bet_raise": 0.44104027163495074
+    },
+    "FLOP:BUTTON:EQ_HIGH_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5604605498657674,
+      "bet_raise": 0.4395394501342326
+    },
+    "PREFLOP:BIG_BLIND:BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.13911023790762686,
+      "bet_raise": 0.8608897620923731
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0918906080568465,
+      "bet_raise": 0.9081093919431534
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 0.25042761623718757,
+      "check_call": 0.08050338563509275,
+      "bet_raise": 0.6690689981277197
+    },
+    "PREFLOP:BIG_BLIND:BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 0.1499160340050713,
+      "check_call": 0.5024084253558934,
+      "bet_raise": 0.3476755406390353
+    },
+    "FLOP:BIG_BLIND:EQ_MID_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.28776787355819033,
+      "bet_raise": 0.7122321264418097
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5672687021590548,
+      "bet_raise": 0.4327312978409452
+    },
+    "FLOP:BIG_BLIND:EQ_MID_SUITED_ACE:FACING_BET": {
+      "fold": 0.22192822025863157,
+      "check_call": 0.5543354747835035,
+      "bet_raise": 0.22373630495786492
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.6531596613227368,
+      "bet_raise": 0.34684033867726316
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.1181499870501174,
+      "check_call": 0.26451140200459083,
+      "bet_raise": 0.6173386109452919
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.12627491815775965,
+      "bet_raise": 0.8737250818422404
+    },
+    "FLOP:BUTTON:EQ_HIGH_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 0.042178967637775136,
+      "check_call": 0.2542430702670985,
+      "bet_raise": 0.7035779620951264
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 0.20773758613446738,
+      "check_call": 0.5334261024046066,
+      "bet_raise": 0.25883631146092595
+    },
+    "FLOP:BUTTON:EQ_HIGH_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.40405132599444743,
+      "bet_raise": 0.5959486740055525
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.3596576809308985,
+      "bet_raise": 0.6403423190691016
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.1691627115233438,
+      "check_call": 0.5517134187828285,
+      "bet_raise": 0.2791238696938276
+    },
+    "PREFLOP:BUTTON:BROADWAY_SUITED:FACING_BET": {
+      "fold": 0.07127037102500319,
+      "check_call": 0.48443836582186833,
+      "bet_raise": 0.4442912631531285
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5832576108366165,
+      "bet_raise": 0.41674238916338346
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_BROADWAY_SUITED:FACING_BET": {
+      "fold": 0.03467010664612358,
+      "check_call": 0.22625751827175028,
+      "bet_raise": 0.7390723750821261
+    },
+    "TURN:BIG_BLIND:EQ_VERY_HIGH_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4399324897047359,
+      "bet_raise": 0.5600675102952641
+    },
+    "TURN:BUTTON:EQ_VERY_HIGH_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.20790293182425656,
+      "bet_raise": 0.7920970681757434
+    },
+    "TURN:BIG_BLIND:EQ_VERY_HIGH_WEAK_DRAW:FACING_BET": {
+      "fold": 0.13867710687619744,
+      "check_call": 0.491929518209281,
+      "bet_raise": 0.36939337491452146
+    },
+    "TURN:BIG_BLIND:EQ_LOW_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.42624702877724274,
+      "bet_raise": 0.5737529712227573
+    },
+    "TURN:BIG_BLIND:EQ_LOW_STRONG_DRAW:FACING_BET": {
+      "fold": 0.28361074176208434,
+      "check_call": 0.4307663475503045,
+      "bet_raise": 0.28562291068761114
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.2883988711658207,
+      "bet_raise": 0.7116011288341793
+    },
+    "TURN:BUTTON:EQ_MID_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.3726210067551566,
+      "bet_raise": 0.6273789932448434
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_PAIR_LOW:FACING_BET": {
+      "fold": 0.6590645663202328,
+      "check_call": 0.2073991215814442,
+      "bet_raise": 0.13353631209832295
+    },
+    "TURN:BUTTON:EQ_MID_WEAK_DRAW:FACING_BET": {
+      "fold": 0.11718217188304439,
+      "check_call": 0.2543006311785989,
+      "bet_raise": 0.6285171969383567
+    },
+    "TURN:BUTTON:EQ_VERY_HIGH_STRONG_DRAW:FACING_BET": {
+      "fold": 0.025089135361207122,
+      "check_call": 0.18385307073923463,
+      "bet_raise": 0.7910577938995582
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.28830831355664205,
+      "bet_raise": 0.7116916864433579
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 0.15526991750364694,
+      "check_call": 0.5897000437731895,
+      "bet_raise": 0.2550300387231636
+    },
+    "TURN:BIG_BLIND:EQ_VERY_LOW_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5522249951701561,
+      "bet_raise": 0.4477750048298439
+    },
+    "TURN:BIG_BLIND:EQ_VERY_LOW_WEAK_DRAW:FACING_BET": {
+      "fold": 0.4518352034897793,
+      "check_call": 0.39787432215741286,
+      "bet_raise": 0.15029047435280796
+    },
+    "TURN:BIG_BLIND:EQ_MID_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.3512634432166206,
+      "bet_raise": 0.6487365567833794
+    },
+    "TURN:BIG_BLIND:EQ_MID_WEAK_DRAW:FACING_BET": {
+      "fold": 0.2362215678546446,
+      "check_call": 0.5923091494776865,
+      "bet_raise": 0.1714692826676688
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_SUITED_ACE:FACING_BET": {
+      "fold": 0.02443340270328423,
+      "check_call": 0.2083611536731396,
+      "bet_raise": 0.7672054436235762
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.3812736723983232,
+      "bet_raise": 0.6187263276016768
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.16534171654533,
+      "bet_raise": 0.8346582834546701
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.14208488694542062,
+      "check_call": 0.5535808978649903,
+      "bet_raise": 0.304334215189589
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.36194099670364843,
+      "bet_raise": 0.6380590032963516
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_PAIR_MID:FACING_BET": {
+      "fold": 0.04358865499245471,
+      "check_call": 0.2887938424962834,
+      "bet_raise": 0.6676175025112618
+    },
+    "FLOP:BUTTON:EQ_MID_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 0.07802463038704437,
+      "check_call": 0.5040237480505385,
+      "bet_raise": 0.41795162156241705
+    },
+    "FLOP:BUTTON:EQ_MID_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5284899505864774,
+      "bet_raise": 0.4715100494135226
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5337941796514678,
+      "bet_raise": 0.4662058203485322
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.2996758453206924,
+      "check_call": 0.5309986492088211,
+      "bet_raise": 0.16932550547048641
+    },
+    "FLOP:BUTTON:EQ_LOW_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4908234428867972,
+      "bet_raise": 0.5091765571132029
+    },
+    "FLOP:BUTTON:EQ_LOW_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.25488114214166174,
+      "check_call": 0.47946330497741746,
+      "bet_raise": 0.2656555528809208
+    },
+    "PREFLOP:BIG_BLIND:PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5605285224970062,
+      "bet_raise": 0.43947147750299365
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.2367325557995772,
+      "bet_raise": 0.7632674442004228
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_PAIR_MID:FACING_BET": {
+      "fold": 0.11291022835702787,
+      "check_call": 0.5410538358562802,
+      "bet_raise": 0.346035935786692
+    },
+    "PREFLOP:BIG_BLIND:PAIR_MID:FACING_BET": {
+      "fold": 0.08877645470989753,
+      "check_call": 0.17254004815194096,
+      "bet_raise": 0.7386834971381615
+    },
+    "FLOP:BUTTON:EQ_HIGH_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.37457089768694546,
+      "bet_raise": 0.6254291023130545
+    },
+    "FLOP:BUTTON:EQ_HIGH_SUITED_ACE:FACING_BET": {
+      "fold": 0.0701154176359612,
+      "check_call": 0.2915259936795899,
+      "bet_raise": 0.6383585886844488
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.29177573039189775,
+      "bet_raise": 0.7082242696081023
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_PAIR_MID:FACING_BET": {
+      "fold": 0.34203490773432943,
+      "check_call": 0.4563010287175678,
+      "bet_raise": 0.20166406354810282
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.21937112899593603,
+      "bet_raise": 0.780628871004064
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_PAIR_MID:FACING_BET": {
+      "fold": 0.15337068909240192,
+      "check_call": 0.4008527386015904,
+      "bet_raise": 0.4457765723060077
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.29338375841092,
+      "bet_raise": 0.70661624158908
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_SUITED_ACE:FACING_BET": {
+      "fold": 0.09079466040718255,
+      "check_call": 0.4596253315880942,
+      "bet_raise": 0.4495800080047232
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.29709596569551877,
+      "bet_raise": 0.7029040343044812
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_PAIR_LOW:FACING_BET": {
+      "fold": 0.20185463729879455,
+      "check_call": 0.5667399368534758,
+      "bet_raise": 0.23140542584772966
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.46494830233154366,
+      "bet_raise": 0.5350516976684564
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 0.027846535609159413,
+      "check_call": 0.35599747103522167,
+      "bet_raise": 0.616155993355619
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_PAIR_LOW:FACING_BET": {
+      "fold": 0.21995901384222155,
+      "check_call": 0.6977278021317561,
+      "bet_raise": 0.0823131840260223
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.348335556914958,
+      "bet_raise": 0.651664443085042
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.47945938407094996,
+      "bet_raise": 0.5205406159290502
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 0.30936455125109447,
+      "check_call": 0.5221247108474145,
+      "bet_raise": 0.1685107379014909
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.1477128648641481,
+      "bet_raise": 0.8522871351358519
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 0.13960841038289049,
+      "check_call": 0.4680218031765595,
+      "bet_raise": 0.39236978644055
+    },
+    "FLOP:BUTTON:EQ_LOW_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.16104004765602659,
+      "bet_raise": 0.8389599523439734
+    },
+    "FLOP:BUTTON:EQ_LOW_PAIR_MID:FACING_BET": {
+      "fold": 0.7791390367880009,
+      "check_call": 0.06950493462482166,
+      "bet_raise": 0.15135602858717748
+    },
+    "FLOP:BIG_BLIND:EQ_MID_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.2956015098938481,
+      "bet_raise": 0.704398490106152
+    },
+    "TURN:BIG_BLIND:EQ_HIGH_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.44566066446614255,
+      "bet_raise": 0.5543393355338575
+    },
+    "TURN:BIG_BLIND:EQ_HIGH_STRONG_DRAW:FACING_BET": {
+      "fold": 0.18470360846933032,
+      "check_call": 0.5928652803700475,
+      "bet_raise": 0.2224311111606221
+    },
+    "FLOP:BIG_BLIND:EQ_MID_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.2576509889564811,
+      "check_call": 0.5619611917510031,
+      "bet_raise": 0.1803878192925158
+    },
+    "FLOP:BUTTON:EQ_MID_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.6627682721442351,
+      "bet_raise": 0.33723172785576483
+    },
+    "FLOP:BUTTON:EQ_MID_PAIR_HIGH:FACING_BET": {
+      "fold": 0.16176774031592406,
+      "check_call": 0.28959145313000006,
+      "bet_raise": 0.5486408065540759
+    },
+    "FLOP:BIG_BLIND:EQ_MID_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.09903821164588034,
+      "bet_raise": 0.9009617883541198
+    },
+    "FLOP:BIG_BLIND:EQ_MID_PAIR_HIGH:FACING_BET": {
+      "fold": 0.44075302691116225,
+      "check_call": 0.38831364069215724,
+      "bet_raise": 0.17093333239668052
+    },
+    "TURN:BUTTON:EQ_VERY_LOW_STRONG_DRAW:FACING_BET": {
+      "fold": 0.268545274496049,
+      "check_call": 0.4058446234314337,
+      "bet_raise": 0.3256101020725174
+    },
+    "TURN:BUTTON:EQ_VERY_LOW_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.31487952841834277,
+      "bet_raise": 0.6851204715816572
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_PAIR_LOW:FACING_BET": {
+      "fold": 0.21104395281104305,
+      "check_call": 0.28473021126102016,
+      "bet_raise": 0.5042258359279368
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4803683331845513,
+      "bet_raise": 0.5196316668154487
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.28648510537024524,
+      "bet_raise": 0.7135148946297548
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_PAIR_LOW:FACING_BET": {
+      "fold": 0.1681061698122873,
+      "check_call": 0.5385575835946118,
+      "bet_raise": 0.29333624659310087
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5287491086076729,
+      "bet_raise": 0.471250891392327
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_BROADWAY_SUITED:FACING_BET": {
+      "fold": 0.17937588092037682,
+      "check_call": 0.42248429873854526,
+      "bet_raise": 0.39813982034107787
+    },
+    "FLOP:BIG_BLIND:EQ_MID_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.11608375745697407,
+      "bet_raise": 0.883916242543026
+    },
+    "FLOP:BIG_BLIND:EQ_MID_PAIR_MID:FACING_BET": {
+      "fold": 0.2420683308065444,
+      "check_call": 0.5582615630410599,
+      "bet_raise": 0.1996701061523957
+    },
+    "FLOP:BUTTON:EQ_HIGH_BROADWAY_SUITED:FACING_BET": {
+      "fold": 0.12531035074075425,
+      "check_call": 0.4629836869782409,
+      "bet_raise": 0.41170596228100487
+    },
+    "FLOP:BUTTON:EQ_HIGH_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5254502888204915,
+      "bet_raise": 0.4745497111795085
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.08691500869057692,
+      "check_call": 0.45057490901395797,
+      "bet_raise": 0.46251008229546503
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.33854401610668367,
+      "bet_raise": 0.6614559838933163
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_PAIR_LOW:FACING_BET": {
+      "fold": 0.05209931883500262,
+      "check_call": 0.6082776135332532,
+      "bet_raise": 0.33962306763174416
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.6183986252723609,
+      "bet_raise": 0.3816013747276392
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5449105889853787,
+      "bet_raise": 0.45508941101462136
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_SUITED_ACE:FACING_BET": {
+      "fold": 0.8921457575677277,
+      "check_call": 0.008377949034821768,
+      "bet_raise": 0.09947629339745045
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.8250782667640134,
+      "bet_raise": 0.17492173323598664
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_BROADWAY_SUITED:FACING_BET": {
+      "fold": 0.4766359196370966,
+      "check_call": 0.36603184169889863,
+      "bet_raise": 0.1573322386640047
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 1.0
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 0.6501059018559294,
+      "bet_raise": 0.3498940981440705
+    },
+    "FLOP:BIG_BLIND:EQ_MID_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.33531439232747606,
+      "bet_raise": 0.6646856076725239
+    },
+    "FLOP:BIG_BLIND:EQ_MID_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 0.5241826471074565,
+      "check_call": 0.33811683024319505,
+      "bet_raise": 0.1377005226493484
+    },
+    "FLOP:BUTTON:EQ_MID_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.544555503998779,
+      "bet_raise": 0.45544449600122094
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.2621787525336228,
+      "bet_raise": 0.7378212474663772
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 0.18729075913293075,
+      "check_call": 0.43093303580683195,
+      "bet_raise": 0.38177620506023735
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5014944282779072,
+      "bet_raise": 0.49850557172209276
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_PAIR_HIGH:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 0.330029003409665,
+      "bet_raise": 0.669970996590335
+    },
+    "PREFLOP:BUTTON:TRIPS:FACING_BET": {
+      "fold": 0.3802049214657625,
+      "check_call": 0.5300751154669388,
+      "bet_raise": 0.08971996306729871
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_TRIPS:FACING_BET": {
+      "fold": 0.18991915122289837,
+      "check_call": 0.45651491331037775,
+      "bet_raise": 0.35356593546672394
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.3553590509751304,
+      "bet_raise": 0.6446409490248696
+    },
+    "FLOP:BUTTON:EQ_LOW_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.3000451951839123,
+      "bet_raise": 0.6999548048160876
+    },
+    "FLOP:BUTTON:EQ_LOW_BROADWAY_SUITED:FACING_BET": {
+      "fold": 0.44630849161177594,
+      "check_call": 0.4814928260800895,
+      "bet_raise": 0.07219868230813462
+    },
+    "FLOP:BUTTON:EQ_MID_BROADWAY_SUITED:FACING_BET": {
+      "fold": 0.3809622730818283,
+      "check_call": 0.281623911273308,
+      "bet_raise": 0.3374138156448637
+    },
+    "PREFLOP:BIG_BLIND:TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.6503603106043592,
+      "bet_raise": 0.3496396893956409
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.6829318269830342,
+      "bet_raise": 0.3170681730169657
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_TRIPS:FACING_BET": {
+      "fold": 0.23620493044153412,
+      "check_call": 0.31122547631656017,
+      "bet_raise": 0.4525695932419057
+    },
+    "PREFLOP:BIG_BLIND:TRIPS:FACING_BET": {
+      "fold": 0.25099309679112997,
+      "check_call": 0.37558009734021597,
+      "bet_raise": 0.373426805868654
+    },
+    "FLOP:BUTTON:EQ_LOW_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 0.3233007775251232,
+      "check_call": 0.07657286191984387,
+      "bet_raise": 0.600126360555033
+    },
+    "FLOP:BUTTON:EQ_LOW_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.22850931556703105,
+      "bet_raise": 0.771490684432969
+    },
+    "FLOP:BUTTON:EQ_LOW_PAIR_HIGH:FACING_BET": {
+      "fold": 0.34263583397462133,
+      "check_call": 0.26021557824021,
+      "bet_raise": 0.39714858778516865
+    },
+    "FLOP:BUTTON:EQ_LOW_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.11218807087550739,
+      "bet_raise": 0.8878119291244927
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_TRIPS:CHECKED_TO": {
+      "fold": 0.3333333333333333,
+      "check_call": 0.3333333333333333,
+      "bet_raise": 0.3333333333333333
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_TRIPS:FACING_BET": {
+      "fold": 0.3333333333333333,
+      "check_call": 0.3333333333333333,
+      "bet_raise": 0.3333333333333333
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.7430609458296515,
+      "bet_raise": 0.2569390541703485
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_TRIPS:FACING_BET": {
+      "fold": 0.4416988607190174,
+      "check_call": 0.16161691227851094,
+      "bet_raise": 0.39668422700247175
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5830766017820703,
+      "bet_raise": 0.4169233982179296
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_BROADWAY_SUITED:FACING_BET": {
+      "fold": 0.42112609960425407,
+      "check_call": 0.1776045895294085,
+      "bet_raise": 0.40126931086633755
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.23329107737553637,
+      "bet_raise": 0.7667089226244637
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_BROADWAY_SUITED:FACING_BET": {
+      "fold": 0.6251249400213779,
+      "check_call": 0.21580000348693132,
+      "bet_raise": 0.15907505649169082
+    },
+    "FLOP:BUTTON:EQ_LOW_TRIPS:FACING_BET": {
+      "fold": 0.9840379251231074,
+      "check_call": 0.008019132631952468,
+      "bet_raise": 0.007942942244940143
+    },
+    "FLOP:BUTTON:EQ_MID_TRIPS:FACING_BET": {
+      "fold": 0.3333333333333333,
+      "check_call": 0.3333333333333333,
+      "bet_raise": 0.3333333333333333
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.8192450742079247,
+      "bet_raise": 0.18075492579207533
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_PAIR_MID:FACING_BET": {
+      "fold": 0.5901584277237208,
+      "check_call": 0.02014666274890222,
+      "bet_raise": 0.38969490952737684
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.6140772316848275,
+      "bet_raise": 0.38592276831517247
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_TRIPS:FACING_BET": {
+      "fold": 0.5381256555178693,
+      "check_call": 0.2309371722410654,
+      "bet_raise": 0.2309371722410654
+    },
+    "FLOP:BUTTON:EQ_MID_TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.7592842760033207,
+      "bet_raise": 0.2407157239966792
+    },
+    "FLOP:BIG_BLIND:EQ_MID_TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5,
+      "bet_raise": 0.5
+    },
+    "FLOP:BIG_BLIND:EQ_MID_TRIPS:FACING_BET": {
+      "fold": 0.375,
+      "check_call": 0.375,
+      "bet_raise": 0.25
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.050537212256013424,
+      "bet_raise": 0.9494627877439866
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_PAIR_HIGH:FACING_BET": {
+      "fold": 0.3333333333333333,
+      "check_call": 0.3333333333333333,
+      "bet_raise": 0.3333333333333333
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.49690278393418436,
+      "bet_raise": 0.5030972160658156
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_PAIR_MID:FACING_BET": {
+      "fold": 0.5299790250273068,
+      "check_call": 0.2057040354733896,
+      "bet_raise": 0.26431693949930357
+    },
+    "FLOP:BUTTON:EQ_LOW_TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.4492264924039302,
+      "bet_raise": 0.5507735075960698
+    }
+  },
+  "regrets": {
+    "PREFLOP:BUTTON:HIGH_OFFSUIT:FACING_BET": {
+      "fold": 910.8652333356504,
+      "check_call": 1115.6681132577833,
+      "bet_raise": 9659.235809624755
+    },
+    "PREFLOP:BIG_BLIND:HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 249.4754596412322,
+      "bet_raise": 703.6055765231351
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 1300.8385660860072
+    },
+    "FLOP:BUTTON:EQ_MID_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 411.746529277306,
+      "check_call": 497.80092008306815,
+      "bet_raise": 5846.5673193478215
+    },
+    "TURN:BIG_BLIND:EQ_VERY_HIGH_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 2689.413251154425,
+      "bet_raise": 3900.990830539358
+    },
+    "TURN:BUTTON:EQ_MID_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 2781.425429887003,
+      "bet_raise": 82.68032216733808
+    },
+    "RIVER:BIG_BLIND:EQ_VERY_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 9663.066221245756,
+      "bet_raise": 9260.471842634184
+    },
+    "RIVER:BUTTON:EQ_MID:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 17267.983018380397,
+      "bet_raise": 7552.991065998582
+    },
+    "RIVER:BIG_BLIND:EQ_VERY_HIGH:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 96.38236361313506,
+      "bet_raise": 41101.560279312216
+    },
+    "TURN:BIG_BLIND:EQ_VERY_HIGH_NO_DRAW:FACING_BET": {
+      "fold": 682.0665899398499,
+      "check_call": 2003.3449321639166,
+      "bet_raise": 16386.948618023165
+    },
+    "TURN:BUTTON:EQ_MID_NO_DRAW:FACING_BET": {
+      "fold": 1629.2787858431948,
+      "check_call": 9172.56881727834,
+      "bet_raise": 6102.478033444898
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 354.17881773853253,
+      "check_call": 3628.311815322421,
+      "bet_raise": 3492.9134397844846
+    },
+    "PREFLOP:BIG_BLIND:HIGH_OFFSUIT:FACING_BET": {
+      "fold": 366.71308876774435,
+      "check_call": 279.41110621169804,
+      "bet_raise": 6010.677806402437
+    },
+    "RIVER:BUTTON:EQ_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 3307.062820109825,
+      "bet_raise": 3834.945303869041
+    },
+    "FLOP:BUTTON:EQ_MID_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 1303.748958855348,
+      "bet_raise": 50.34298283271584
+    },
+    "PREFLOP:BUTTON:SUITED_ACE:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 355.70239142430887,
+      "bet_raise": 4875.153870017852
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 276.6214341541378,
+      "bet_raise": 1041.7823178856288
+    },
+    "FLOP:BUTTON:EQ_MID_SUITED_ACE:FACING_BET": {
+      "fold": 576.4665491287886,
+      "check_call": 1338.745842417667,
+      "bet_raise": 2768.789287378974
+    },
+    "TURN:BUTTON:EQ_HIGH_STRONG_DRAW:FACING_BET": {
+      "fold": 1118.6327225298112,
+      "check_call": 3177.565019692222,
+      "bet_raise": 3036.6369790367094
+    },
+    "RIVER:BUTTON:EQ_VERY_LOW:FACING_BET": {
+      "fold": 17882.580303213294,
+      "check_call": 0.0,
+      "bet_raise": 64.0
+    },
+    "RIVER:BUTTON:EQ_VERY_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 932.8634314651752,
+      "bet_raise": 5619.03746271732
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 13.01459550154911,
+      "check_call": 3021.2693259168964,
+      "bet_raise": 3842.547523761936
+    },
+    "TURN:BUTTON:EQ_HIGH_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 395.9710369023285,
+      "bet_raise": 1062.6078682241641
+    },
+    "FLOP:BUTTON:EQ_MID_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 215.116072592168,
+      "bet_raise": 668.7961178923174
+    },
+    "TURN:BIG_BLIND:EQ_HIGH_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 2383.1808287987446,
+      "bet_raise": 1295.4128902026564
+    },
+    "TURN:BUTTON:EQ_VERY_HIGH_NO_DRAW:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 56.718383863847635,
+      "bet_raise": 14028.237393189644
+    },
+    "RIVER:BIG_BLIND:EQ_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 8467.972959428329,
+      "bet_raise": 1861.6358867119989
+    },
+    "RIVER:BUTTON:EQ_VERY_HIGH:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 266.99560969112827,
+      "bet_raise": 26651.752345085955
+    },
+    "RIVER:BIG_BLIND:EQ_MID:FACING_BET": {
+      "fold": 10091.683990981888,
+      "check_call": 32394.961174864537,
+      "bet_raise": 0.0
+    },
+    "TURN:BIG_BLIND:EQ_HIGH_NO_DRAW:FACING_BET": {
+      "fold": 4229.508161076144,
+      "check_call": 12957.666183749521,
+      "bet_raise": 2152.6606914395334
+    },
+    "TURN:BUTTON:EQ_VERY_HIGH_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 377.4059440123753,
+      "bet_raise": 3915.8557523736886
+    },
+    "RIVER:BUTTON:EQ_VERY_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 6864.052792600221
+    },
+    "PREFLOP:BUTTON:SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 1742.4245073875913,
+      "bet_raise": 2367.6740338866352
+    },
+    "PREFLOP:BIG_BLIND:WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 285.97834877191406,
+      "bet_raise": 389.8905934111361
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 46.08264723136374,
+      "bet_raise": 771.6377941942571
+    },
+    "FLOP:BUTTON:EQ_HIGH_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 309.99709086037063,
+      "check_call": 163.02112601213113,
+      "bet_raise": 1514.246122846964
+    },
+    "TURN:BIG_BLIND:EQ_VERY_LOW_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 544.1096136327458,
+      "bet_raise": 2548.713780944959
+    },
+    "TURN:BUTTON:EQ_LOW_NO_DRAW:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 8121.806602703417,
+      "bet_raise": 3107.7279457043583
+    },
+    "RIVER:BIG_BLIND:EQ_VERY_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 2664.08128469077,
+      "bet_raise": 9438.400785836826
+    },
+    "RIVER:BIG_BLIND:EQ_VERY_LOW:FACING_BET": {
+      "fold": 27658.958230033793,
+      "check_call": 833.9371898483778,
+      "bet_raise": 4182.901695190548
+    },
+    "TURN:BIG_BLIND:EQ_VERY_LOW_NO_DRAW:FACING_BET": {
+      "fold": 9317.118173577292,
+      "check_call": 0.0,
+      "bet_raise": 0.0
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 1356.3136325114674,
+      "check_call": 3107.2528534961343,
+      "bet_raise": 1491.1771757250865
+    },
+    "TURN:BUTTON:EQ_LOW_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 388.86820818957676,
+      "bet_raise": 2014.191011432941
+    },
+    "PREFLOP:BIG_BLIND:WEAK_OFFSUIT:FACING_BET": {
+      "fold": 1609.2057286642537,
+      "check_call": 867.2730629387842,
+      "bet_raise": 3180.2511133745443
+    },
+    "FLOP:BUTTON:EQ_HIGH_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 168.91292040056754,
+      "bet_raise": 497.2007971680013
+    },
+    "PREFLOP:BUTTON:PAIR_MID:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 297.8347902922893,
+      "bet_raise": 3093.7891947307976
+    },
+    "PREFLOP:BIG_BLIND:BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 17.061520062940524,
+      "bet_raise": 161.34541978583272
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 46.62911844006473,
+      "bet_raise": 329.38759159644087
+    },
+    "FLOP:BUTTON:EQ_HIGH_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 337.77385467094547,
+      "bet_raise": 271.8402558793482
+    },
+    "TURN:BIG_BLIND:EQ_VERY_HIGH_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 1525.4098048527258,
+      "bet_raise": 1492.269472879509
+    },
+    "RIVER:BUTTON:EQ_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 4734.3799404099145,
+      "bet_raise": 542.4157220104167
+    },
+    "TURN:BIG_BLIND:EQ_VERY_HIGH_STRONG_DRAW:FACING_BET": {
+      "fold": 534.5171029410893,
+      "check_call": 249.5891104844329,
+      "bet_raise": 7173.417659105389
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_BROADWAY_SUITED:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 508.86890428133967,
+      "bet_raise": 817.1397865887429
+    },
+    "PREFLOP:BIG_BLIND:BROADWAY_SUITED:FACING_BET": {
+      "fold": 125.3238489716647,
+      "check_call": 338.31199148397934,
+      "bet_raise": 989.8611345497582
+    },
+    "RIVER:BUTTON:EQ_HIGH:FACING_BET": {
+      "fold": 740.9256218761361,
+      "check_call": 8793.508014955954,
+      "bet_raise": 17047.704343822148
+    },
+    "FLOP:BUTTON:EQ_HIGH_PAIR_MID:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 312.3114197759205,
+      "bet_raise": 2047.8328119681291
+    },
+    "FLOP:BIG_BLIND:EQ_MID_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 555.1287989835268,
+      "bet_raise": 418.7480793487842
+    },
+    "FLOP:BUTTON:EQ_LOW_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 79.31100371165425,
+      "check_call": 3917.992741890216,
+      "bet_raise": 2458.556161586291
+    },
+    "TURN:BIG_BLIND:EQ_MID_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 2035.2008157552204,
+      "bet_raise": 2402.2486891263397
+    },
+    "TURN:BUTTON:EQ_LOW_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 1128.452860112341,
+      "bet_raise": 656.6776685018157
+    },
+    "RIVER:BIG_BLIND:EQ_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 5136.256171513528,
+      "bet_raise": 4602.616961234404
+    },
+    "RIVER:BIG_BLIND:EQ_HIGH:FACING_BET": {
+      "fold": 2164.087872357083,
+      "check_call": 23983.476994994315,
+      "bet_raise": 15844.233450149313
+    },
+    "TURN:BIG_BLIND:EQ_MID_NO_DRAW:FACING_BET": {
+      "fold": 12046.002616363954,
+      "check_call": 8550.275758212665,
+      "bet_raise": 1864.1419839464288
+    },
+    "FLOP:BIG_BLIND:EQ_MID_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 1264.567250991659,
+      "check_call": 3379.185970928746,
+      "bet_raise": 735.9632675348465
+    },
+    "TURN:BUTTON:EQ_LOW_WEAK_DRAW:FACING_BET": {
+      "fold": 110.97145882619009,
+      "check_call": 3886.382926647103,
+      "bet_raise": 3476.5285612798157
+    },
+    "FLOP:BUTTON:EQ_LOW_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 35.13596110583311,
+      "bet_raise": 1033.0663942222645
+    },
+    "FLOP:BUTTON:EQ_MID_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 8.105195508864753,
+      "bet_raise": 377.7636395739809
+    },
+    "TURN:BIG_BLIND:EQ_HIGH_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 172.3123565444906,
+      "bet_raise": 1018.0514029384057
+    },
+    "TURN:BIG_BLIND:EQ_HIGH_WEAK_DRAW:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 3226.6386377338163,
+      "bet_raise": 3399.1743309819385
+    },
+    "FLOP:BUTTON:EQ_MID_PAIR_MID:FACING_BET": {
+      "fold": 441.08741225460926,
+      "check_call": 455.6295623461162,
+      "bet_raise": 1725.5470744581141
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 659.6008076291502,
+      "bet_raise": 74.22068644920697
+    },
+    "TURN:BIG_BLIND:EQ_MID_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 1487.1719552919835,
+      "bet_raise": 1041.9477045745602
+    },
+    "TURN:BUTTON:EQ_MID_STRONG_DRAW:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 6122.37547956033,
+      "bet_raise": 782.6489602119246
+    },
+    "TURN:BIG_BLIND:EQ_MID_STRONG_DRAW:FACING_BET": {
+      "fold": 4296.424802943774,
+      "check_call": 6114.154484454864,
+      "bet_raise": 530.1522133284691
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 1704.4301907211805,
+      "check_call": 2862.532263664626,
+      "bet_raise": 0.0
+    },
+    "TURN:BUTTON:EQ_MID_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 1105.290627829553,
+      "bet_raise": 980.6183905793008
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 564.5261226723285,
+      "bet_raise": 858.6541206837313
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 307.32728274183523,
+      "bet_raise": 1281.3529791877168
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 1744.8351993851152,
+      "check_call": 4705.360553410762,
+      "bet_raise": 343.4678382758253
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 542.8200831687205,
+      "check_call": 673.6319755226424,
+      "bet_raise": 4871.875260319505
+    },
+    "FLOP:BIG_BLIND:EQ_MID_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 437.13583383793053,
+      "bet_raise": 1111.461754898366
+    },
+    "FLOP:BUTTON:EQ_LOW_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 25.179920633663215,
+      "bet_raise": 476.6968967797133
+    },
+    "TURN:BUTTON:EQ_LOW_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 956.7728675134929,
+      "bet_raise": 1024.0187246220873
+    },
+    "RIVER:BUTTON:EQ_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 4407.450636876191,
+      "bet_raise": 204.05048558400145
+    },
+    "TURN:BUTTON:EQ_LOW_STRONG_DRAW:FACING_BET": {
+      "fold": 203.04682359408923,
+      "check_call": 2749.550949056617,
+      "bet_raise": 4412.745385911102
+    },
+    "FLOP:BIG_BLIND:EQ_MID_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 2114.407184138545,
+      "check_call": 6044.703753668985,
+      "bet_raise": 525.5420539190198
+    },
+    "FLOP:BUTTON:EQ_LOW_SUITED_ACE:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 2016.4637684603683,
+      "bet_raise": 454.07842569068185
+    },
+    "RIVER:BUTTON:EQ_LOW:FACING_BET": {
+      "fold": 13727.764799748242,
+      "check_call": 9793.375516627479,
+      "bet_raise": 540.0694820221995
+    },
+    "PREFLOP:BUTTON:WEAK_OFFSUIT:FACING_BET": {
+      "fold": 421.81765845215864,
+      "check_call": 2970.6173807269547,
+      "bet_raise": 5386.153525768834
+    },
+    "FLOP:BIG_BLIND:EQ_MID_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 126.21902908772233,
+      "bet_raise": 163.48001425788166
+    },
+    "FLOP:BUTTON:EQ_LOW_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 397.37592039219214,
+      "bet_raise": 640.5957905566119
+    },
+    "FLOP:BIG_BLIND:EQ_MID_BROADWAY_SUITED:FACING_BET": {
+      "fold": 461.94388863074,
+      "check_call": 422.70020530607866,
+      "bet_raise": 782.6719534225975
+    },
+    "FLOP:BUTTON:EQ_LOW_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 2013.6576112729192,
+      "check_call": 1388.581890067979,
+      "bet_raise": 2451.6581179813693
+    },
+    "FLOP:BUTTON:EQ_HIGH_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 603.3358973186405
+    },
+    "FLOP:BUTTON:EQ_HIGH_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 301.5071074441609,
+      "bet_raise": 2623.935733164763
+    },
+    "TURN:BIG_BLIND:EQ_VERY_LOW_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 537.989400631826,
+      "bet_raise": 943.3663534148076
+    },
+    "TURN:BUTTON:EQ_VERY_LOW_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 448.1373155052091,
+      "bet_raise": 1052.990486201168
+    },
+    "TURN:BIG_BLIND:EQ_VERY_LOW_STRONG_DRAW:FACING_BET": {
+      "fold": 2165.1983346577063,
+      "check_call": 2724.8647322822876,
+      "bet_raise": 390.24131224809616
+    },
+    "TURN:BUTTON:EQ_VERY_LOW_WEAK_DRAW:FACING_BET": {
+      "fold": 765.6711335351329,
+      "check_call": 1258.6559846514672,
+      "bet_raise": 4037.1072213696316
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 539.60430285652,
+      "bet_raise": 0.0
+    },
+    "RIVER:BIG_BLIND:EQ_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 8127.220206815344,
+      "bet_raise": 238.89126639263256
+    },
+    "RIVER:BIG_BLIND:EQ_LOW:FACING_BET": {
+      "fold": 23832.08091866496,
+      "check_call": 13252.950670451648,
+      "bet_raise": 2628.4813969035745
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 1372.745945895591,
+      "check_call": 2257.352145728067,
+      "bet_raise": 249.1120050434008
+    },
+    "PREFLOP:BIG_BLIND:PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 146.41471863150508,
+      "bet_raise": 134.25257355448096
+    },
+    "FLOP:BIG_BLIND:EQ_MID_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 420.9013608379227,
+      "bet_raise": 90.27332658172308
+    },
+    "FLOP:BIG_BLIND:EQ_MID_PAIR_LOW:FACING_BET": {
+      "fold": 324.16283570420455,
+      "check_call": 2084.0848407962076,
+      "bet_raise": 948.515878834791
+    },
+    "PREFLOP:BIG_BLIND:PAIR_LOW:FACING_BET": {
+      "fold": 557.3346144032947,
+      "check_call": 838.6982008008755,
+      "bet_raise": 1581.9570578026328
+    },
+    "PREFLOP:BIG_BLIND:PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 284.0613715930349,
+      "bet_raise": 200.12986585127499
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 25.108676137496488,
+      "bet_raise": 548.5085416982422
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 297.1876061417649,
+      "check_call": 21.32800115939746,
+      "bet_raise": 1937.2352126621297
+    },
+    "TURN:BUTTON:EQ_VERY_HIGH_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 290.8530316566348,
+      "bet_raise": 848.5932352699767
+    },
+    "TURN:BUTTON:EQ_VERY_HIGH_WEAK_DRAW:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 479.4476822361609,
+      "bet_raise": 2887.851519296681
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_PAIR_HIGH:FACING_BET": {
+      "fold": 351.08985029054577,
+      "check_call": 1317.1567689986935,
+      "bet_raise": 2034.6708954584585
+    },
+    "PREFLOP:BIG_BLIND:PAIR_HIGH:FACING_BET": {
+      "fold": 25.641067196955433,
+      "check_call": 237.82824243061324,
+      "bet_raise": 2501.7427990687515
+    },
+    "PREFLOP:BIG_BLIND:SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 252.44451531408484,
+      "bet_raise": 348.83013620481034
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 277.0948453476749,
+      "bet_raise": 316.6091282619
+    },
+    "TURN:BIG_BLIND:EQ_LOW_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 427.69022695122294,
+      "bet_raise": 2761.3077362685763
+    },
+    "TURN:BIG_BLIND:EQ_LOW_NO_DRAW:FACING_BET": {
+      "fold": 11573.763104870302,
+      "check_call": 0.0,
+      "bet_raise": 0.0
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_SUITED_ACE:FACING_BET": {
+      "fold": 1102.6011381229293,
+      "check_call": 1566.538927481662,
+      "bet_raise": 0.0
+    },
+    "PREFLOP:BIG_BLIND:SUITED_ACE:FACING_BET": {
+      "fold": 374.4627176508976,
+      "check_call": 693.5634430105198,
+      "bet_raise": 2862.3805923450955
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 107.7754284940942,
+      "bet_raise": 595.1513556330209
+    },
+    "TURN:BUTTON:EQ_HIGH_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 824.0270620400956,
+      "bet_raise": 2553.183380530022
+    },
+    "TURN:BUTTON:EQ_HIGH_NO_DRAW:FACING_BET": {
+      "fold": 455.06364183825826,
+      "check_call": 2311.8289660350238,
+      "bet_raise": 11081.615805705267
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_SUITED_ACE:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 2020.9380027578977,
+      "bet_raise": 1591.2600228451622
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 133.70679848717444
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_SUITED_ACE:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 325.79588271165255,
+      "bet_raise": 490.770599749862
+    },
+    "PREFLOP:BUTTON:PAIR_LOW:FACING_BET": {
+      "fold": 1679.828288043657,
+      "check_call": 1075.6882626005863,
+      "bet_raise": 1825.213060506421
+    },
+    "PREFLOP:BIG_BLIND:SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 217.9431376826716,
+      "bet_raise": 118.49428142429862
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 327.63294843321194
+    },
+    "FLOP:BUTTON:EQ_MID_PAIR_LOW:FACING_BET": {
+      "fold": 642.6841393741718,
+      "check_call": 979.4351864366886,
+      "bet_raise": 1439.6736597722384
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 65.73831644070529,
+      "check_call": 1332.0421501913859,
+      "bet_raise": 550.7005333316087
+    },
+    "PREFLOP:BIG_BLIND:SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 220.2460401611019,
+      "bet_raise": 1882.5100942730205
+    },
+    "FLOP:BUTTON:EQ_MID_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 169.3952084480751,
+      "bet_raise": 306.1950397844381
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 788.1691155230988,
+      "check_call": 1932.1235739033514,
+      "bet_raise": 222.50897604012056
+    },
+    "TURN:BUTTON:EQ_VERY_LOW_NO_DRAW:FACING_BET": {
+      "fold": 6688.080979861425,
+      "check_call": 0.0,
+      "bet_raise": 267.9708635875993
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 280.93467231823985,
+      "bet_raise": 314.12456934477973
+    },
+    "TURN:BUTTON:EQ_VERY_LOW_NO_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 61.94637545874164,
+      "bet_raise": 1864.8989018358793
+    },
+    "FLOP:BUTTON:EQ_LOW_PAIR_LOW:FACING_BET": {
+      "fold": 265.43432382666697,
+      "check_call": 1303.5159010229575,
+      "bet_raise": 32.93477547320522
+    },
+    "FLOP:BUTTON:EQ_LOW_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 127.58466913184319,
+      "bet_raise": 275.61506422380137
+    },
+    "FLOP:BUTTON:EQ_MID_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 529.4458863569522,
+      "bet_raise": 500.377296453506
+    },
+    "FLOP:BUTTON:EQ_MID_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 103.46497386108908,
+      "check_call": 0.0,
+      "bet_raise": 3393.791131251737
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 121.37132405127,
+      "bet_raise": 840.801205220018
+    },
+    "FLOP:BUTTON:EQ_MID_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 267.19116582091175,
+      "bet_raise": 265.8203501488806
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_PAIR_HIGH:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 1683.244216978677,
+      "bet_raise": 3135.6810745116036
+    },
+    "FLOP:BUTTON:EQ_MID_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 866.4526038360771,
+      "bet_raise": 1709.4341214292408
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 360.34627765414297,
+      "bet_raise": 529.8544270608838
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 1077.8922859607362,
+      "bet_raise": 2982.142255847157
+    },
+    "PREFLOP:BUTTON:BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 60.771292683668456,
+      "check_call": 926.5824215019079,
+      "bet_raise": 907.5989501338008
+    },
+    "FLOP:BUTTON:EQ_HIGH_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 164.0069566705069,
+      "check_call": 34.0487718625207,
+      "bet_raise": 486.15083359435584
+    },
+    "FLOP:BUTTON:EQ_HIGH_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 19.68034931232827,
+      "bet_raise": 94.77789741480163
+    },
+    "TURN:BIG_BLIND:EQ_LOW_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 996.8388541174941,
+      "bet_raise": 1290.961995360525
+    },
+    "TURN:BUTTON:EQ_HIGH_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 440.11674891599057,
+      "bet_raise": 876.125617166892
+    },
+    "TURN:BIG_BLIND:EQ_LOW_WEAK_DRAW:FACING_BET": {
+      "fold": 5343.082963618466,
+      "check_call": 3456.281696258572,
+      "bet_raise": 0.0
+    },
+    "TURN:BUTTON:EQ_HIGH_WEAK_DRAW:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 640.7270878897752,
+      "bet_raise": 3377.462817284485
+    },
+    "PREFLOP:BUTTON:PAIR_HIGH:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 50.7601101990478,
+      "bet_raise": 3373.0683814253516
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 178.42746374596453,
+      "bet_raise": 875.866854982568
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_PAIR_HIGH:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 304.5302999476089,
+      "bet_raise": 2819.0193572779845
+    },
+    "FLOP:BUTTON:EQ_HIGH_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 480.57546203161496,
+      "bet_raise": 295.06633593558973
+    },
+    "FLOP:BUTTON:EQ_HIGH_PAIR_HIGH:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 976.6021931318651,
+      "bet_raise": 2169.5225023942908
+    },
+    "FLOP:BUTTON:EQ_HIGH_PAIR_LOW:FACING_BET": {
+      "fold": 266.24485898368187,
+      "check_call": 857.2328235439596,
+      "bet_raise": 1113.2153215114024
+    },
+    "FLOP:BUTTON:EQ_HIGH_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 303.55539242986936,
+      "bet_raise": 106.4838853689928
+    },
+    "PREFLOP:BIG_BLIND:BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 12.385029593104015,
+      "bet_raise": 96.7403464970348
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 36.954937752750624,
+      "bet_raise": 23.851431062813493
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 96.86515354668339,
+      "check_call": 34.22353292576223,
+      "bet_raise": 31.90207364183952
+    },
+    "PREFLOP:BIG_BLIND:BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 203.35647385290721,
+      "check_call": 502.6099551479168,
+      "bet_raise": 512.8674139596471
+    },
+    "FLOP:BIG_BLIND:EQ_MID_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 149.13861196743824,
+      "bet_raise": 563.3584370168799
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 597.0217647767593
+    },
+    "FLOP:BIG_BLIND:EQ_MID_SUITED_ACE:FACING_BET": {
+      "fold": 1253.7165892795977,
+      "check_call": 2899.973284299399,
+      "bet_raise": 176.007740390342
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 58.20628904687551,
+      "bet_raise": 278.80983879068083
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 659.1763411258079,
+      "bet_raise": 1105.745251212455
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 79.67080632658119,
+      "bet_raise": 211.972618007029
+    },
+    "FLOP:BUTTON:EQ_HIGH_HIGH_OFFSUIT:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 710.2669409057595,
+      "bet_raise": 4374.4830695696755
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 709.3280333735786,
+      "bet_raise": 384.22078759130466
+    },
+    "FLOP:BUTTON:EQ_HIGH_HIGH_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 261.8525636996557,
+      "bet_raise": 945.2456992282957
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 40.623523633466135,
+      "bet_raise": 383.50665685106173
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 1297.0246238792288,
+      "bet_raise": 1080.2723123609408
+    },
+    "PREFLOP:BUTTON:BROADWAY_SUITED:FACING_BET": {
+      "fold": 16.395547619796837,
+      "check_call": 780.0136073843994,
+      "bet_raise": 1487.2856468552948
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 313.9450592719673,
+      "bet_raise": 300.7500118798573
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_BROADWAY_SUITED:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 1361.7781958845305
+    },
+    "TURN:BIG_BLIND:EQ_VERY_HIGH_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 712.5806088213538,
+      "bet_raise": 519.6024325638007
+    },
+    "TURN:BUTTON:EQ_VERY_HIGH_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 1772.2071555607429
+    },
+    "TURN:BIG_BLIND:EQ_VERY_HIGH_WEAK_DRAW:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 1990.641545915213,
+      "bet_raise": 2786.955922914536
+    },
+    "TURN:BIG_BLIND:EQ_LOW_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 630.4424225023911,
+      "bet_raise": 1573.465891508412
+    },
+    "TURN:BIG_BLIND:EQ_LOW_STRONG_DRAW:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 6136.910512195294,
+      "bet_raise": 3072.250851565556
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 215.19645031999713,
+      "bet_raise": 247.97126489957085
+    },
+    "TURN:BUTTON:EQ_MID_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 774.6040623983968,
+      "bet_raise": 895.5004018953917
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_PAIR_LOW:FACING_BET": {
+      "fold": 730.3623692997382,
+      "check_call": 1039.123795953905,
+      "bet_raise": 173.28780551765212
+    },
+    "TURN:BUTTON:EQ_MID_WEAK_DRAW:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 2003.5197224841372,
+      "bet_raise": 4663.097338408591
+    },
+    "TURN:BUTTON:EQ_VERY_HIGH_STRONG_DRAW:FACING_BET": {
+      "fold": 1277.2795666495106,
+      "check_call": 475.89222312471213,
+      "bet_raise": 4548.066815654951
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 22.448195134360304,
+      "bet_raise": 653.6139719377635
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 1045.1106854325506,
+      "check_call": 2406.5588073742438,
+      "bet_raise": 1411.286672260186
+    },
+    "TURN:BIG_BLIND:EQ_VERY_LOW_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 583.8669503732318,
+      "bet_raise": 1347.5828319510172
+    },
+    "TURN:BIG_BLIND:EQ_VERY_LOW_WEAK_DRAW:FACING_BET": {
+      "fold": 560.6740200911219,
+      "check_call": 5232.7806323647355,
+      "bet_raise": 1543.8059388610739
+    },
+    "TURN:BIG_BLIND:EQ_MID_WEAK_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 738.4684521129373,
+      "bet_raise": 1211.4539132297957
+    },
+    "TURN:BIG_BLIND:EQ_MID_WEAK_DRAW:FACING_BET": {
+      "fold": 100.24744738600722,
+      "check_call": 6153.669207651344,
+      "bet_raise": 2099.1698312183867
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_SUITED_ACE:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 236.6654055594134,
+      "bet_raise": 2449.8144674005816
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 198.13695739021716,
+      "bet_raise": 792.3467346731542
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 88.47697873327901,
+      "bet_raise": 443.12497590534474
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 1121.4332011900979,
+      "bet_raise": 1175.794699312216
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 43.437216690122824,
+      "bet_raise": 443.33864482129064
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_PAIR_MID:FACING_BET": {
+      "fold": 26.594756431885898,
+      "check_call": 38.31484491440965,
+      "bet_raise": 1727.8730967188665
+    },
+    "FLOP:BUTTON:EQ_MID_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 18.371145643192804,
+      "check_call": 728.2057343190518,
+      "bet_raise": 103.51378381603094
+    },
+    "FLOP:BUTTON:EQ_MID_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 110.54613560129415,
+      "bet_raise": 90.32652780206779
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 305.62415897428724,
+      "bet_raise": 135.50609808459848
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 632.5145776397645,
+      "check_call": 1325.0287659043208,
+      "bet_raise": 295.5373579953387
+    },
+    "FLOP:BUTTON:EQ_LOW_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 96.32889643343253,
+      "bet_raise": 226.48005526907602
+    },
+    "FLOP:BUTTON:EQ_LOW_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 237.57101905080765,
+      "check_call": 1189.8268629662998,
+      "bet_raise": 1008.0223412607916
+    },
+    "PREFLOP:BIG_BLIND:PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 156.40349479976774,
+      "bet_raise": 250.62080882669073
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 228.83076540150523,
+      "bet_raise": 526.8352691634492
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_PAIR_MID:FACING_BET": {
+      "fold": 283.3136909142026,
+      "check_call": 2122.0191707089148,
+      "bet_raise": 869.9540676517292
+    },
+    "PREFLOP:BIG_BLIND:PAIR_MID:FACING_BET": {
+      "fold": 151.52208470754982,
+      "check_call": 127.90508778964028,
+      "bet_raise": 2172.4205884770327
+    },
+    "FLOP:BUTTON:EQ_HIGH_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 67.28999068230874,
+      "bet_raise": 483.8021742785369
+    },
+    "FLOP:BUTTON:EQ_HIGH_SUITED_ACE:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 674.5064034871126,
+      "bet_raise": 2455.321231992944
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 8.223188160680845,
+      "bet_raise": 186.76468159243797
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_PAIR_MID:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 702.1043740157252,
+      "bet_raise": 379.44014469443226
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 138.6617802413209,
+      "bet_raise": 494.3736607675692
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_PAIR_MID:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 622.3210850182618,
+      "bet_raise": 1983.146722749622
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 701.8341842954218
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_SUITED_ACE:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 891.1355332150691,
+      "bet_raise": 2344.1844192759563
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 233.83652585226324,
+      "bet_raise": 310.0361309871692
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_PAIR_LOW:FACING_BET": {
+      "fold": 864.5885525454004,
+      "check_call": 1684.782577305784,
+      "bet_raise": 391.3507615151514
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 285.9602079878097,
+      "bet_raise": 115.35365837267561
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 151.33554613934794,
+      "check_call": 291.9135268548688,
+      "bet_raise": 690.3912135029947
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_PAIR_LOW:FACING_BET": {
+      "fold": 850.2309837455293,
+      "check_call": 1114.6683172568721,
+      "bet_raise": 0.0
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 46.944555026663316,
+      "bet_raise": 196.74046388241456
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 71.47533140002486,
+      "bet_raise": 0.0
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 302.47955526495144,
+      "check_call": 317.0469669613313,
+      "bet_raise": 122.3142711493278
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_WEAK_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 157.16525212670865,
+      "bet_raise": 538.9451642174728
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_WEAK_OFFSUIT:FACING_BET": {
+      "fold": 671.1590097629595,
+      "check_call": 1107.7052445874506,
+      "bet_raise": 1814.7671687977972
+    },
+    "FLOP:BUTTON:EQ_LOW_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 65.37977678847784,
+      "bet_raise": 88.25260674886808
+    },
+    "FLOP:BUTTON:EQ_LOW_PAIR_MID:FACING_BET": {
+      "fold": 502.2503861541561,
+      "check_call": 150.90856043215268,
+      "bet_raise": 130.48099846826545
+    },
+    "FLOP:BIG_BLIND:EQ_MID_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 362.36025350670747,
+      "bet_raise": 217.50290444012168
+    },
+    "TURN:BIG_BLIND:EQ_HIGH_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 158.30762299719873,
+      "bet_raise": 1277.3515031600473
+    },
+    "TURN:BIG_BLIND:EQ_HIGH_STRONG_DRAW:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 5396.439891668905,
+      "bet_raise": 1076.4126956997777
+    },
+    "FLOP:BIG_BLIND:EQ_MID_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 714.561189427931,
+      "check_call": 1680.468423272775,
+      "bet_raise": 0.0
+    },
+    "FLOP:BUTTON:EQ_MID_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 258.33988105215184,
+      "bet_raise": 26.553353186458637
+    },
+    "FLOP:BUTTON:EQ_MID_PAIR_HIGH:FACING_BET": {
+      "fold": 830.2742446815759,
+      "check_call": 714.7424068802002,
+      "bet_raise": 494.8705429928324
+    },
+    "FLOP:BIG_BLIND:EQ_MID_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 9.261590441246415,
+      "bet_raise": 261.9700767650538
+    },
+    "FLOP:BIG_BLIND:EQ_MID_PAIR_HIGH:FACING_BET": {
+      "fold": 1162.387229014983,
+      "check_call": 1041.8364807003559,
+      "bet_raise": 320.08203080320266
+    },
+    "TURN:BUTTON:EQ_VERY_LOW_STRONG_DRAW:FACING_BET": {
+      "fold": 963.716561611079,
+      "check_call": 1577.0020194832646,
+      "bet_raise": 2568.03702984863
+    },
+    "TURN:BUTTON:EQ_VERY_LOW_STRONG_DRAW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 114.37935566167923,
+      "bet_raise": 846.9556387212584
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_PAIR_LOW:FACING_BET": {
+      "fold": 459.9651478582306,
+      "check_call": 935.0178067857348,
+      "bet_raise": 678.8726520249363
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 224.82404439014533,
+      "bet_raise": 218.269561534432
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 30.70955597742363,
+      "bet_raise": 327.7858621005442
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_PAIR_LOW:FACING_BET": {
+      "fold": 553.9364157156688,
+      "check_call": 1216.5764976479234,
+      "bet_raise": 584.4252047793611
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 187.88773383423293,
+      "bet_raise": 74.37423366956503
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_BROADWAY_SUITED:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 62.588273798357996,
+      "bet_raise": 769.7706662916564
+    },
+    "FLOP:BIG_BLIND:EQ_MID_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 85.76904361091592,
+      "bet_raise": 427.84074068019595
+    },
+    "FLOP:BIG_BLIND:EQ_MID_PAIR_MID:FACING_BET": {
+      "fold": 74.46800640739332,
+      "check_call": 2235.298273714076,
+      "bet_raise": 623.7523900360792
+    },
+    "FLOP:BUTTON:EQ_HIGH_BROADWAY_SUITED:FACING_BET": {
+      "fold": 115.73372987484265,
+      "check_call": 824.9217122260524,
+      "bet_raise": 0.0
+    },
+    "FLOP:BUTTON:EQ_HIGH_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 137.36529093446342,
+      "bet_raise": 163.4690586456441
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_SUITED_CONNECTOR:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 874.4023837670599,
+      "bet_raise": 1186.466780417068
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_PAIR_LOW:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 163.93576130036826,
+      "bet_raise": 258.37661890937187
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_PAIR_LOW:FACING_BET": {
+      "fold": 678.7974976883983,
+      "check_call": 677.8297402696377,
+      "bet_raise": 548.3660663067827
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_SUITED_CONNECTOR:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 50.693630486376605,
+      "bet_raise": 343.79729800212135
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_SUITED_ACE:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 81.14808179327613,
+      "bet_raise": 9.008164397792662
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_SUITED_ACE:FACING_BET": {
+      "fold": 266.580508066794,
+      "check_call": 33.21149843376574,
+      "bet_raise": 24.941627800240028
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 54.980471243246875,
+      "bet_raise": 16.966775110621725
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_BROADWAY_SUITED:FACING_BET": {
+      "fold": 203.73915747639734,
+      "check_call": 0.0,
+      "bet_raise": 0.0
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 0.007686794871982983
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 11.890872749367379,
+      "check_call": 66.83043080954792,
+      "bet_raise": 8.38428563000678
+    },
+    "FLOP:BIG_BLIND:EQ_MID_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 98.17865208508559,
+      "bet_raise": 154.28366505758748
+    },
+    "FLOP:BIG_BLIND:EQ_MID_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 588.0805194234996,
+      "check_call": 514.8066646539179,
+      "bet_raise": 41.63274735686667
+    },
+    "FLOP:BUTTON:EQ_MID_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 116.9245332301096,
+      "bet_raise": 71.47103288724612
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 91.8203641977462,
+      "bet_raise": 200.43195712262283
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 491.8225105700198,
+      "check_call": 529.3399790784937,
+      "bet_raise": 358.6906949681741
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 45.01234221194841,
+      "bet_raise": 49.06594705559159
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_PAIR_HIGH:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 84.8552386296683,
+      "bet_raise": 100.06606252082169
+    },
+    "PREFLOP:BUTTON:TRIPS:FACING_BET": {
+      "fold": 361.47177470961526,
+      "check_call": 281.00146874214704,
+      "bet_raise": 13.525056687579742
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_TRIPS:FACING_BET": {
+      "fold": 579.7921328394623,
+      "check_call": 325.25870012618935,
+      "bet_raise": 243.80029807597083
+    },
+    "FLOP:BUTTON:EQ_VERY_HIGH_TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 96.48004073328038,
+      "bet_raise": 47.74063136270764
+    },
+    "FLOP:BUTTON:EQ_LOW_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 54.70068095433582,
+      "bet_raise": 17.33518121453672
+    },
+    "FLOP:BUTTON:EQ_LOW_BROADWAY_SUITED:FACING_BET": {
+      "fold": 246.18527259111505,
+      "check_call": 203.84485934684295,
+      "bet_raise": 11.630191341792006
+    },
+    "FLOP:BUTTON:EQ_MID_BROADWAY_SUITED:FACING_BET": {
+      "fold": 60.954704338936295,
+      "check_call": 793.3355585897882,
+      "bet_raise": 373.8869178745208
+    },
+    "PREFLOP:BIG_BLIND:TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 11.303282930956367
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 160.71489391415713,
+      "bet_raise": 97.7209010204851
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_HIGH_TRIPS:FACING_BET": {
+      "fold": 312.259053312477,
+      "check_call": 305.9209594667697,
+      "bet_raise": 258.0699487042484
+    },
+    "PREFLOP:BIG_BLIND:TRIPS:FACING_BET": {
+      "fold": 212.70358793026344,
+      "check_call": 161.82394982832864,
+      "bet_raise": 184.10869628115478
+    },
+    "FLOP:BUTTON:EQ_LOW_BROADWAY_OFFSUIT:FACING_BET": {
+      "fold": 295.14333998606975,
+      "check_call": 0.0,
+      "bet_raise": 0.0
+    },
+    "FLOP:BUTTON:EQ_LOW_BROADWAY_OFFSUIT:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 40.58878675429891,
+      "bet_raise": 89.83959538731301
+    },
+    "FLOP:BUTTON:EQ_LOW_PAIR_HIGH:FACING_BET": {
+      "fold": 45.81628821097263,
+      "check_call": 215.64258341661528,
+      "bet_raise": 236.51521099316787
+    },
+    "FLOP:BUTTON:EQ_LOW_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 31.060330232631742,
+      "bet_raise": 32.08080185357311
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 21.392597576872042
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_TRIPS:FACING_BET": {
+      "fold": 79.67922769096633,
+      "check_call": 0.0,
+      "bet_raise": 0.0
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 47.253250555564875,
+      "bet_raise": 55.93375462590582
+    },
+    "FLOP:BIG_BLIND:EQ_HIGH_TRIPS:FACING_BET": {
+      "fold": 8.935889476825885,
+      "check_call": 49.54774809554595,
+      "bet_raise": 104.35878520048885
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 127.08728407738178,
+      "bet_raise": 6.82167226967502
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_BROADWAY_SUITED:FACING_BET": {
+      "fold": 483.5927075434423,
+      "check_call": 0.0,
+      "bet_raise": 9.713497277371786
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_BROADWAY_SUITED:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 2.7087285617578036
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_BROADWAY_SUITED:FACING_BET": {
+      "fold": 21.25314619686815,
+      "check_call": 0.0,
+      "bet_raise": 98.0
+    },
+    "FLOP:BUTTON:EQ_LOW_TRIPS:FACING_BET": {
+      "fold": 70.94854992690244,
+      "check_call": 0.0,
+      "bet_raise": 0.0
+    },
+    "FLOP:BUTTON:EQ_MID_TRIPS:FACING_BET": {
+      "fold": 35.65292530586018,
+      "check_call": 0.0,
+      "bet_raise": 0.0
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 42.95434148257194,
+      "bet_raise": 0.0
+    },
+    "FLOP:BUTTON:EQ_VERY_LOW_PAIR_MID:FACING_BET": {
+      "fold": 55.09493190854194,
+      "check_call": 9.998831872297167,
+      "bet_raise": 100.90592626301512
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 6.238023862192193,
+      "bet_raise": 0.0
+    },
+    "FLOP:BIG_BLIND:EQ_LOW_TRIPS:FACING_BET": {
+      "fold": 93.03180414492299,
+      "check_call": 0.0,
+      "bet_raise": 0.0
+    },
+    "FLOP:BUTTON:EQ_MID_TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.5036812010387877,
+      "bet_raise": 19.84423585524481
+    },
+    "FLOP:BIG_BLIND:EQ_MID_TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 48.87047472536507,
+      "bet_raise": 1.0593073397916655
+    },
+    "FLOP:BIG_BLIND:EQ_MID_TRIPS:FACING_BET": {
+      "fold": 70.7127901306304,
+      "check_call": 0.0,
+      "bet_raise": 0.0
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_PAIR_HIGH:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 4.076464083913152,
+      "bet_raise": 10.210211491460889
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_PAIR_HIGH:FACING_BET": {
+      "fold": 0.0,
+      "check_call": 14.697235615255995,
+      "bet_raise": 36.25525214148168
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_PAIR_MID:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 18.721070570033003
+    },
+    "FLOP:BIG_BLIND:EQ_VERY_LOW_PAIR_MID:FACING_BET": {
+      "fold": 65.47318052498446,
+      "check_call": 0.0,
+      "bet_raise": 25.27108986755725
+    },
+    "FLOP:BUTTON:EQ_LOW_TRIPS:CHECKED_TO": {
+      "fold": 0.0,
+      "check_call": 0.0,
+      "bet_raise": 6.846742076772994
+    }
+  }
+}
