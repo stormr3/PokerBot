@@ -1,103 +1,127 @@
-# ==============================================================================
-# evaluator.py — Hand Strength Evaluation Module
-# Owner: Person A
-#
-# Responsibilities:
-# - Evaluate 5-card poker hands into comparable rank tuples.
-# - Find the best 5-card hand out of 2 hole cards and up to 5 board cards.
-# - Provide tournament default discard tiebreaker (lowest rank; tiebreak: s, h, d, c).
-# ==============================================================================
-
-from collections import Counter
-from itertools import combinations
+# evaluator.py — fast integer hand evaluator (card int = rank_idx*4 + suit_idx, suits "shdc")
 from typing import Sequence
 
-RANKS: str = "23456789TJQKA"
-SUITS: str = "shdc"  # Also the official engine tiebreak order for discards
-RANK_VALUE: dict[str, int] = {r: i + 2 for i, r in enumerate(RANKS)}
-SUIT_ORDER: dict[str, int] = {s: i for i, s in enumerate(SUITS)}
-VALID_CARDS: set[str] = {r + s for r in RANKS for s in SUITS}
-
-HAND_NAMES: tuple[str, ...] = (
-    "high card",
-    "one pair",
-    "two pair",
-    "three of a kind",
-    "straight",
-    "flush",
-    "full house",
-    "four of a kind",
-    "straight flush",
-)
+RANKS = "23456789TJQKA"
+SUITS = "shdc"  # also the engine's discard tie-break order
+RANK_VALUE = {r: i + 2 for i, r in enumerate(RANKS)}
+SUIT_ORDER = {s: i for i, s in enumerate(SUITS)}
+INT_CARD = [r + s for r in RANKS for s in SUITS]
+CARD_INT = {c: i for i, c in enumerate(INT_CARD)}
+VALID_CARDS = set(INT_CARD)
+HAND_NAMES = ("high card", "one pair", "two pair", "three of a kind", "straight",
+              "flush", "full house", "four of a kind", "straight flush")
 
 
-def rank5(cards: Sequence[str]) -> tuple:
-    """Computes the strength of exactly 5 cards as a comparable tuple (higher is better).
-
-    Matches the official engine.py evaluator specification:
-        Category 8: Straight flush
-        Category 7: Four of a kind
-        Category 6: Full house
-        Category 5: Flush
-        Category 4: Straight
-        Category 3: Three of a kind
-        Category 2: Two pair
-        Category 1: One pair
-        Category 0: High card
-    """
-    values = sorted((RANK_VALUE[c[0]] for c in cards), reverse=True)
-    flush = len({c[1] for c in cards}) == 1
-    uniq = sorted(set(values), reverse=True)
-    straight_high = 0
-
-    if len(uniq) == 5:
-        if uniq[0] - uniq[4] == 4:
-            straight_high = uniq[0]
-        elif uniq == [14, 5, 4, 3, 2]:  # A-2-3-4-5 wheel straight
-            straight_high = 5
-
-    groups = sorted(Counter(values).items(), key=lambda kv: (kv[1], kv[0]), reverse=True)
-    shape = [n for _, n in groups]
-    by_group = tuple(v for v, _ in groups)
-
-    if straight_high and flush:
-        return (8, straight_high)
-    if shape == [4, 1]:
-        return (7,) + by_group
-    if shape == [3, 2]:
-        return (6,) + by_group
-    if flush:
-        return (5,) + tuple(values)
-    if straight_high:
-        return (4, straight_high)
-    if shape == [3, 1, 1]:
-        return (3,) + by_group
-    if shape == [2, 2, 1]:
-        return (2,) + by_group
-    if shape == [2, 1, 1, 1]:
-        return (1,) + by_group
-    return (0,) + tuple(values)
+def _build_straight() -> list[int]:
+    t = [0] * 8192
+    for m in range(8192):
+        for top in range(12, 3, -1):
+            p = 31 << (top - 4)
+            if m & p == p:
+                t[m] = top + 1
+                break
+        else:
+            if m & 0x100F == 0x100F:  # A-2-3-4-5
+                t[m] = 4
+    return t
 
 
-def best_hand(hole: Sequence[str], board: Sequence[str]) -> tuple:
-    """Finds the best 5-card hand from hole cards + board cards."""
-    all_cards = list(hole) + list(board)
-    if len(all_cards) < 5:
-        return rank5(all_cards + ["2s"] * (5 - len(all_cards)))
-    return max(rank5(combo) for combo in combinations(all_cards, 5))
+STRAIGHT = _build_straight()
 
 
-def compare_hands(hole_a: Sequence[str], hole_b: Sequence[str], board: Sequence[str]) -> int:
-    """Compares two hands at showdown: returns 1 if A wins, -1 if B wins, 0 on tie."""
-    score_a = best_hand(hole_a, board)
-    score_b = best_hand(hole_b, board)
-    if score_a > score_b:
-        return 1
-    if score_b > score_a:
-        return -1
-    return 0
+def eval_cards(cards) -> int:
+    """Score of the best 5-card hand among 5..7 int cards. Higher is better; score>>20 = category."""
+    cnt = [0] * 13
+    sm = [0, 0, 0, 0]
+    sc = [0, 0, 0, 0]
+    rm = 0
+    for c in cards:
+        r = c >> 2
+        s = c & 3
+        cnt[r] += 1
+        sm[s] |= 1 << r
+        sc[s] += 1
+        rm |= 1 << r
+    fm = 0
+    for s in range(4):
+        if sc[s] >= 5:
+            fm = sm[s]
+            break
+    if fm:
+        st = STRAIGHT[fm]
+        if st:
+            return (8 << 20) | st
+    quads, trips, pairs, singles = [], [], [], []
+    for r in range(12, -1, -1):
+        n = cnt[r]
+        if n == 0:
+            continue
+        if n == 4:
+            quads.append(r)
+        elif n == 3:
+            trips.append(r)
+        elif n == 2:
+            pairs.append(r)
+        else:
+            singles.append(r)
+    if quads:
+        k = max(trips[0] if trips else -1, pairs[0] if pairs else -1, singles[0] if singles else -1)
+        return (7 << 20) | (quads[0] << 16) | (k << 12)
+    if trips and (len(trips) > 1 or pairs):
+        p = max(trips[1] if len(trips) > 1 else -1, pairs[0] if pairs else -1)
+        return (6 << 20) | (trips[0] << 16) | (p << 12)
+    if fm:
+        out = 5 << 20
+        shift = 16
+        for r in range(12, -1, -1):
+            if fm >> r & 1:
+                out |= r << shift
+                shift -= 4
+                if shift < 0:
+                    break
+        return out
+    st = STRAIGHT[rm]
+    if st:
+        return (4 << 20) | st
+    if trips:
+        ks = sorted(pairs + singles, reverse=True)[:2]
+        out = (3 << 20) | (trips[0] << 16)
+        shift = 12
+        for k in ks:
+            out |= k << shift
+            shift -= 4
+        return out
+    if len(pairs) >= 2:
+        k = max(pairs[2] if len(pairs) > 2 else -1, singles[0] if singles else -1)
+        return (2 << 20) | (pairs[0] << 16) | (pairs[1] << 12) | (max(k, 0) << 8)
+    if pairs:
+        out = (1 << 20) | (pairs[0] << 16)
+        shift = 12
+        for k in singles[:3]:
+            out |= k << shift
+            shift -= 4
+        return out
+    out = 0
+    shift = 16
+    for k in singles[:5]:
+        out |= k << shift
+        shift -= 4
+    return out
+
+
+# ---- string-based compatibility helpers ----
+def to_ints(cards: Sequence[str]) -> list[int]:
+    return [CARD_INT[c] for c in cards]
+
+
+def best_hand(hole: Sequence[str], board: Sequence[str]) -> int:
+    return eval_cards(to_ints(list(hole) + list(board)))
+
+
+def compare_hands(a: Sequence[str], b: Sequence[str], board: Sequence[str]) -> int:
+    x, y = best_hand(a, board), best_hand(b, board)
+    return (x > y) - (x < y)
 
 
 def default_discard(hole: Sequence[str]) -> str:
-    """Official engine tiebreak discard: lowest rank; tiebreak spades, hearts, diamonds, clubs."""
     return min(hole, key=lambda c: (RANK_VALUE[c[0]], SUIT_ORDER[c[1]]))

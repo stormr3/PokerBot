@@ -1,52 +1,25 @@
-# ==============================================================================
-# discard.py — Flop Discard Selection Engine
-# Owner: Person B
-#
-# Responsibilities:
-# - Select 1 of 3 hole cards to discard post-flop.
-# - Score candidate 2-card holdings based on current hand rank and draw potential.
-# - Guarantee returning a valid card from hole_cards under all circumstances.
-# ==============================================================================
-
+# discard.py — choose the discard by sampled showdown equity of each keep (turn/river included)
+import random
+from time import perf_counter as now
 from typing import Any
 
-from evaluator import best_hand, default_discard
+import equity
+import timemgr
+from evaluator import CARD_INT, default_discard
+from postflop import tilt_k_from_history
 
 
 def choose(req: dict[str, Any], state: Any, opp_model: Any) -> dict[str, str]:
-    """Selects one card to discard from the 3 hole cards upon receiving discard_request.
-
-    Args:
-        req: Official engine discard_request dictionary containing 'hole_cards' and 'board'.
-        state: Authoritative GameState instance.
-        opp_model: OpponentModel instance.
-
-    Returns:
-        dict: Format {"type": "discard", "card": "<card_str>"}.
-    """
-    hole_cards = req.get("hole_cards", [])
-    board = req.get("board", [])
-
-    if not hole_cards:
-        return {"type": "discard", "card": "2s"}
-
-    if len(hole_cards) <= 1:
-        return {"type": "discard", "card": hole_cards[0]}
-
-    # Baseline evaluation: evaluate each candidate 2-card holding on the 3-card flop
-    # We want to keep the 2 cards that produce the strongest hand, discarding the odd card out.
-    best_candidate_card = None
-    best_retained_score = None
-
-    for discard_candidate in hole_cards:
-        retained = [c for c in hole_cards if c != discard_candidate]
-        score = best_hand(retained, board)
-
-        if best_retained_score is None or score > best_retained_score:
-            best_retained_score = score
-            best_candidate_card = discard_candidate
-
-    if best_candidate_card is None:
-        best_candidate_card = default_discard(hole_cards)
-
-    return {"type": "discard", "card": best_candidate_card}
+    hole_s = req.get("hole_cards", [])
+    if len(hole_s) != 3 or timemgr.low_time(state):
+        return {"type": "discard", "card": default_discard(hole_s) if hole_s else "2s"}
+    hole = [CARD_INT[c] for c in hole_s]
+    flop = [CARD_INT[c] for c in req["board"][:3]]
+    deadline = now() + timemgr.budget_ms(state, "discard") / 1000.0
+    k = tilt_k_from_history(state.history, opp_model)
+    cons = getattr(opp_model, "disc_consistency", 0.8)
+    eqs = equity.keep_equities(hole, flop, k, 400, deadline, cons)
+    best = max(eqs)
+    near = [i for i, e in enumerate(eqs) if e >= best - 0.006]
+    i = random.choice(near)
+    return {"type": "discard", "card": hole_s[i]}

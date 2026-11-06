@@ -72,6 +72,14 @@ class OpponentModel:
     # Percentile (0..1) of the hands they raised preflop with, seen at showdown
     raised_pcts: list[float] = field(default_factory=list)
 
+    # Postflop behaviour
+    post_opps: int = 0        # opp acted with no bet to face (postflop)
+    post_bets: int = 0
+    faced_bets: int = 0       # opp faced my bet/raise (postflop)
+    faced_folds: int = 0
+    disc_n: int = 0           # showdowns where we could check their discard
+    disc_ok: int = 0          # ... and it matched the heuristic-best keep
+
     # ------------------------------------------------------------------ callbacks
 
     def on_discard_result(self, my_discard: str, opp_discard: str, board: list[str]) -> None:
@@ -115,9 +123,14 @@ class OpponentModel:
             if pfr:
                 self.pfr_count += 1
 
+            self._postflop_stats(history)
             opp_hole = msg.get("opp_hole_cards")
             if opp_hole:
                 self.showdown_hands_seen.append(list(opp_hole))
+                try:
+                    self._check_discard(msg)
+                except Exception as err:
+                    _log_err("check_discard", err)
                 opp_discard = msg.get("opp_discard")
                 if opp_raised and opp_discard and _pt is not None:
                     three = list(opp_hole) + [opp_discard]
@@ -125,6 +138,54 @@ class OpponentModel:
                         self.raised_pcts.append(_pt.get_percentile(three))
         except Exception as err:
             _log_err("on_hand_result", err)
+
+    def _postflop_stats(self, history) -> None:
+        street, outstanding = None, None
+        for e in history:
+            st, act, actor = e.get("street"), e.get("action"), e.get("actor")
+            if st == "preflop":
+                continue
+            if st != street:
+                street, outstanding = st, None
+            if actor == "opp":
+                if outstanding == "me":
+                    self.faced_bets += 1
+                    self.faced_folds += act == "fold"
+                else:
+                    self.post_opps += 1
+                    self.post_bets += act == "raise"
+            if act == "raise":
+                outstanding = actor
+            elif act == "call":
+                outstanding = None
+
+    def _check_discard(self, msg) -> None:
+        board, hole, d = msg.get("board") or [], msg.get("opp_hole_cards"), msg.get("opp_discard")
+        if len(board) < 3 or not hole or not d or len(hole) != 2:
+            return
+        from equity import keep_score
+        from evaluator import CARD_INT
+        a, b, dd = CARD_INT[hole[0]], CARD_INT[hole[1]], CARD_INT[d]
+        flop = [CARD_INT[c] for c in board[:3]]
+        self.disc_n += 1
+        if keep_score(a, b, flop) >= max(keep_score(a, dd, flop), keep_score(b, dd, flop)) - 1e-9:
+            self.disc_ok += 1
+
+    @property
+    def fold_to_bet(self) -> float:
+        return (self.faced_folds + 3.0) / (self.faced_bets + 8.0)
+
+    @property
+    def agg_freq(self) -> float:
+        return (self.post_bets + 2.0) / (self.post_opps + 5.0)
+
+    @property
+    def disc_consistency(self) -> float:
+        return (self.disc_ok + 0.8 * 5) / (self.disc_n + 5.0)
+
+    @property
+    def is_station(self) -> bool:
+        return self.faced_bets >= 12 and self.fold_to_bet < 0.25
 
     # ------------------------------------------------------------------ statistics
 

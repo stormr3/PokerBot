@@ -1,85 +1,158 @@
-# ==============================================================================
-# equity.py — Monte Carlo Equity Estimation Module
-# Owner: Person A
-#
-# Responsibilities:
-# - Estimate showdown win probability of private cards against opponent ranges.
-# - Support dead card exclusion (known cards, exposed discards).
-# - Respect time budgets per request to never trigger timeouts.
-# ==============================================================================
-
+# equity.py — discard-aware equity: keep scoring, flop rollouts, discard-filtered opponent range
+import math
 import random
-import time
-from typing import Sequence
+from itertools import accumulate
+from time import perf_counter as now
 
-from evaluator import VALID_CARDS, compare_hands
+from evaluator import STRAIGHT, eval_cards
 
 
-def estimate(
-    my_cards: Sequence[str],
-    board: Sequence[str],
-    opp_range: list[tuple[str, str]] | None = None,
-    dead_cards: Sequence[str] | None = None,
-    time_budget_ms: float = 10.0,
-    max_simulations: int = 100,
-) -> float:
-    """Estimates showdown equity (win probability in [0.0, 1.0]) via Monte Carlo rollout.
+def keep_score(a: int, b: int, flop) -> float:
+    """Cheap proxy for how good (a,b) is on this flop (made hand + draws). Models opponent discards."""
+    cards = (a, b) + tuple(flop)
+    s = eval_cards(cards)
+    cat = s >> 20
+    v = cat + ((s >> 16) & 15) / 13.0
+    if cat < 4:
+        sc = [0, 0, 0, 0]
+        rm = 0
+        for c in cards:
+            sc[c & 3] += 1
+            rm |= 1 << (c >> 2)
+        for suit in range(4):
+            if sc[suit] == 4 and ((a & 3) == suit or (b & 3) == suit):
+                v += 0.55
+                break
+        outs = 0
+        for r in range(13):
+            if not (rm >> r) & 1 and STRAIGHT[rm | (1 << r)]:
+                outs += 1
+        v += 0.4 if outs >= 2 else (0.15 if outs == 1 else 0.0)
+    return v
 
-    Args:
-        my_cards: Player's remaining hole cards (2 cards).
-        board: Community board cards dealt so far (0, 3, 4, or 5).
-        opp_range: Optional list of candidate 2-card holdings for the opponent.
-        dead_cards: Known cards excluded from play (e.g. exposed discards).
-        time_budget_ms: Maximum computation time allocated for this estimation.
-        max_simulations: Maximum number of Monte Carlo iterations.
 
-    Returns:
-        float: Win equity, where 1.0 is certainty of winning and 0.0 is certainty of loss.
-    """
-    start_time = time.monotonic()
-    deadline = start_time + (time_budget_ms / 1000.0)
+def keep_equities(my3, flop, tilt_k, n, deadline, cons=0.8, min_n=30):
+    """Showdown equity of discarding each of my 3 cards (index i discarded), with future streets
+    sampled. Opponent: 3 random unseen cards (best of tilt_k draws = stronger range after aggression),
+    keeps the heuristic-best pair with prob `cons`, then turn/river are drawn."""
+    used = set(my3) | set(flop)
+    unseen = [c for c in range(52) if c not in used]
+    flop = tuple(flop)
+    cache = {}
 
-    # If showdown is already fixed (river with 5 cards) and opponent range has 1 hand:
-    if len(board) == 5 and opp_range and len(opp_range) == 1:
-        res = compare_hands(my_cards, opp_range[0], board)
-        return 1.0 if res > 0 else (0.5 if res == 0 else 0.0)
+    def ks(a, b):
+        if a > b:
+            a, b = b, a
+        k = a * 64 + b
+        v = cache.get(k)
+        if v is None:
+            v = cache[k] = keep_score(a, b, flop)
+        return v
 
-    # Build unknown deck pool
-    known = set(my_cards) | set(board)
-    if dead_cards:
-        known |= set(dead_cards)
-    pool = [c for c in VALID_CARDS if c not in known]
-
-    needed_board = 5 - len(board)
-    wins = 0.0
-    sims = 0
-
-    while sims < max_simulations:
-        # Time guard
-        if (sims & 15 == 0) and time.monotonic() >= deadline:
+    mk = [(my3[1], my3[2]), (my3[0], my3[2]), (my3[0], my3[1])]
+    tot = [0.0, 0.0, 0.0]
+    cnt = 0
+    need = 3 * tilt_k + 2
+    while cnt < n:
+        if cnt >= min_n and (cnt & 15) == 0 and now() > deadline:
             break
+        pool = random.sample(unseen, need)
+        best = None
+        for j in range(tilt_k):
+            t = pool[3 * j:3 * j + 3]
+            sc = (ks(t[1], t[2]), ks(t[0], t[2]), ks(t[0], t[1]))
+            m = max(sc)
+            if best is None or m > best[0]:
+                best = (m, t, sc)
+        _, t, sc = best
+        i = sc.index(max(sc)) if random.random() < cons else random.randrange(3)
+        opp = [x for k2, x in enumerate(t) if k2 != i]
+        board = flop + (pool[-2], pool[-1])
+        os_ = eval_cards(opp + list(board))
+        for d in range(3):
+            ms = eval_cards(list(mk[d]) + list(board))
+            tot[d] += 1.0 if ms > os_ else (0.5 if ms == os_ else 0.0)
+        cnt += 1
+    return [x / cnt for x in tot]
 
-        # Sample opponent cards and remaining board cards
-        if opp_range and len(opp_range) > 0:
-            opp_holding = random.choice(opp_range)
-            # Ensure sampled holding doesn't overlap with known cards
-            if opp_holding[0] in known or opp_holding[1] in known:
-                continue
-            sim_deck = [c for c in pool if c != opp_holding[0] and c != opp_holding[1]]
-            runout = random.sample(sim_deck, needed_board) if needed_board > 0 else []
-        else:
-            sampled = random.sample(pool, 2 + needed_board)
-            opp_holding = (sampled[0], sampled[1])
-            runout = sampled[2:]
 
-        full_board = list(board) + runout
-        res = compare_hands(my_cards, opp_holding, full_board)
-        if res > 0:
-            wins += 1.0
-        elif res == 0:
-            wins += 0.5
-        sims += 1
+def build_base(flop, dead, opp_d, cons=0.8):
+    """Opponent kept-pair range after the exposed discard `opp_d` (None = unfiltered).
+    w(a,b) ~ 1 if d was the heuristic-best drop out of {a,b,d}, else small."""
+    unseen = [c for c in range(52) if c not in dead]
+    flop = tuple(flop)
+    cache = {}
 
-    if sims == 0:
-        return 0.5
-    return wins / sims
+    def ks(a, b):
+        if a > b:
+            a, b = b, a
+        k = a * 64 + b
+        v = cache.get(k)
+        if v is None:
+            v = cache[k] = keep_score(a, b, flop)
+        return v
+
+    floor = max(0.02, (1.0 - cons) * 0.6)
+    pairs, w = [], []
+    n = len(unseen)
+    for i in range(n):
+        a = unseen[i]
+        sad = ks(a, opp_d) if opp_d is not None else 0.0
+        for j in range(i + 1, n):
+            b = unseen[j]
+            if opp_d is None:
+                wt = 1.0
+            else:
+                d = ks(a, b) - max(sad, ks(b, opp_d))
+                wt = 1.0 if d >= 0 else max(floor, math.exp(d / 0.25))
+            pairs.append((a, b))
+            w.append(wt)
+    return pairs, w
+
+
+def street_data(pairs, w, board):
+    """Per-pair strengths on `board` and weighted percentiles (for action tilt)."""
+    bl = list(board)
+    strs = [eval_cards([a, b] + bl) for a, b in pairs]
+    order = sorted(range(len(pairs)), key=strs.__getitem__)
+    tot = sum(w)
+    cum = 0.0
+    pct = [0.0] * len(pairs)
+    for i in order:
+        pct[i] = (cum + 0.5 * w[i]) / tot
+        cum += w[i]
+    return strs, pct
+
+
+def eq_river(my_score, strs, weights):
+    num = den = 0.0
+    for s, wt in zip(strs, weights):
+        den += wt
+        if my_score > s:
+            num += wt
+        elif my_score == s:
+            num += 0.5 * wt
+    return num / den if den else 0.5
+
+
+def eq_turn(my2, board, pairs, weights, known, n, deadline, min_n=60):
+    """Turn equity vs weighted pair range, sampling the river."""
+    pool = [c for c in range(52) if c not in known]
+    cum = list(accumulate(weights))
+    idx = random.choices(range(len(pairs)), cum_weights=cum, k=n)
+    base_me = list(my2) + list(board)
+    base_op = list(board)
+    tot = 0.0
+    done = 0
+    for ix in idx:
+        if done >= min_n and (done & 31) == 0 and now() > deadline:
+            break
+        a, b = pairs[ix]
+        r = random.choice(pool)
+        while r == a or r == b:
+            r = random.choice(pool)
+        ms = eval_cards(base_me + [r])
+        os_ = eval_cards([a, b] + base_op + [r])
+        tot += 1.0 if ms > os_ else (0.5 if ms == os_ else 0.0)
+        done += 1
+    return tot / done
