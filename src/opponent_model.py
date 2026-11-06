@@ -77,6 +77,8 @@ class OpponentModel:
     post_bets: int = 0
     faced_bets: int = 0       # opp faced my bet/raise (postflop)
     faced_folds: int = 0
+    bet_n: int = 0            # showdowns where opp bet/raised turn or river
+    bet_strong: int = 0       # ... and held two pair or better
     disc_n: int = 0           # showdowns where we could check their discard
     disc_ok: int = 0          # ... and it matched the heuristic-best keep
 
@@ -129,6 +131,7 @@ class OpponentModel:
                 self.showdown_hands_seen.append(list(opp_hole))
                 try:
                     self._check_discard(msg)
+                    self._check_bets(msg, history)
                 except Exception as err:
                     _log_err("check_discard", err)
                 opp_discard = msg.get("opp_discard")
@@ -170,6 +173,22 @@ class OpponentModel:
         self.disc_n += 1
         if keep_score(a, b, flop) >= max(keep_score(a, dd, flop), keep_score(b, dd, flop)) - 1e-9:
             self.disc_ok += 1
+
+    def _check_bets(self, msg, history) -> None:
+        board, hole = msg.get("board") or [], msg.get("opp_hole_cards")
+        if len(board) < 5 or not hole or len(hole) != 2:
+            return
+        if not any(e.get("actor") == "opp" and e.get("action") == "raise" and e.get("street") in ("turn", "river")
+                   for e in history):
+            return
+        from evaluator import CARD_INT, eval_cards
+        cat = eval_cards([CARD_INT[c] for c in list(hole) + list(board)]) >> 20
+        self.bet_n += 1
+        self.bet_strong += cat >= 2
+
+    @property
+    def bet_value_rate(self) -> float:
+        return (self.bet_strong + 3.0) / (self.bet_n + 5.0)
 
     @property
     def fold_to_bet(self) -> float:

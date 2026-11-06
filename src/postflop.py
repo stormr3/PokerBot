@@ -13,8 +13,8 @@ _H: dict[str, Any] = {"id": None}
 
 
 def _trust(opp) -> float:
-    agg = getattr(opp, "agg_freq", 0.4)
-    return max(0.5, 1.0 - max(0.0, agg - 0.4) * 1.25)
+    """How strong this opponent's bets have proven at showdown (learned), 0.6..1.3."""
+    return max(0.6, min(1.3, 0.85 + 0.5 * (getattr(opp, "bet_value_rate", 0.6) - 0.5)))
 
 
 def tilt_k_from_history(history, opp) -> int:
@@ -29,7 +29,7 @@ def tilt_k_from_history(history, opp) -> int:
     return max(1, min(3, k))
 
 
-def _power(history, opp) -> float:
+def _power(history, opp, req=None) -> float:
     p, outstanding, street = 0.0, None, None
     for e in history or []:
         st, act, actor = e.get("street"), e.get("action"), e.get("actor")
@@ -49,7 +49,10 @@ def _power(history, opp) -> float:
             outstanding = actor
         elif act == "call":
             outstanding = None
-    return max(-0.6, min(3.5, p * _trust(opp)))
+    if req and req.get("to_call", 0) > 0:  # bigger bets are stronger, small ones weaker
+        frac = req["to_call"] / float(max(1, req["pot"] - req["to_call"]))
+        p += 0.9 * (min(frac, 1.5) - 0.6)
+    return max(-0.6, min(4.0, p * (_trust(opp) if p > 0 else 1.0)))
 
 
 def _range(state, board, hole, opp):
@@ -106,9 +109,11 @@ def _choose(e, req, street, state, opp, hole3):
 
     if to_call > 0:
         odds = to_call / float(pot + to_call)
-        margin = 0.02 + (0.03 if i_bet else 0.0) - max(-0.04, min(0.04, 0.04 * (agg - 0.4) / 0.4))
+        ip = getattr(state, "seat", "button") == "button"
+        stack_frac = min(1.0, to_call / float(max(1, req.get("my_stack", 1))))
+        margin = 0.025 + (0.03 if i_bet else 0.0) + (0.0 if ip or street == "flop" else 0.02) + 0.06 * stack_frac
         if hole3:
-            margin += 0.01
+            margin += 0.015
         if canr and e >= (0.82 if river else 0.80) and random.random() < 0.85:
             return _size(req, 0.9)
         if e >= odds + margin:
@@ -150,7 +155,7 @@ def decide(req: dict[str, Any], state: Any, opp: Any) -> dict[str, Any]:
                                      getattr(opp, "disc_consistency", 0.8)))
         else:
             pairs, w, strs, pct = _range(state, board, hole, opp)
-            pw = _power(hist, opp)
+            pw = _power(hist, opp, req)
             weights = [x * (0.15 + p) ** pw for x, p in zip(w, pct)]
             if len(board) == 5:
                 e = eq.eq_river(eval_cards(hole + board), strs, weights)

@@ -1,5 +1,5 @@
 # timemgr.py — per-decision time budgets from the remaining bank
-_SHARE = {"flop": 0.40, "discard": 0.50, "turn": 0.35, "river": 0.35}
+_SHARE = {"flop": 0.70, "discard": 0.90, "turn": 0.60, "river": 0.50}
 
 
 def budget_ms(state, kind: str) -> float:
