@@ -130,7 +130,7 @@ def _choose(e, req, street, state, opp, hole3):
             return simple("check")
         frac = min(1.0, 0.45 + (e - vthr) * 1.6 + (0.1 if station else 0.0))
         return _size(req, frac)
-    if e < (0.15 if river else 0.28) and not station:
+    if canr and e < (0.15 if river else 0.28) and not station:
         f = max(0.0, min(1.5, (fold_p - 0.38) / 0.2))
         if random.random() < 0.3 * f:
             return _size(req, 0.6)

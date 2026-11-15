@@ -23,7 +23,7 @@ if BOT_DIR not in sys.path:
 import betting
 import config
 import discard
-from evaluator import default_discard
+from evaluator import VALID_CARDS, default_discard
 from opponent_model import OpponentModel
 from state import GameState
 
@@ -80,13 +80,18 @@ def handle_discard_request(msg: dict, state: GameState, opp_model: OpponentModel
         if not isinstance(reply, dict) or reply.get("type") != "discard":
             raise ValueError(f"Malformed discard reply: {reply}")
         card = reply.get("card")
-        if card not in hole_cards:
+        if card not in VALID_CARDS or card not in hole_cards:
             raise ValueError(f"Illegal discard card: {card} not in {hole_cards}")
         return reply
     except Exception as err:
         log_debug(f"Discard fallback triggered: {err}")
         # Official fallback (Section 9.4): lowest rank; tiebreak spades, hearts, diamonds, clubs
-        fallback_card = default_discard(hole_cards)
+        # Guard against empty / malformed hole_cards — never call min() on an empty or invalid sequence.
+        fallback_card = "2s"  # safe legal-looking default if hole_cards is empty/malformed
+        if isinstance(hole_cards, (list, tuple)):
+            valid_cards = [c for c in hole_cards if isinstance(c, str) and c in VALID_CARDS]
+            if valid_cards:
+                fallback_card = default_discard(valid_cards)
         return {"type": "discard", "card": fallback_card}
 
 
